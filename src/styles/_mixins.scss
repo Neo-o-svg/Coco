@@ -26,12 +26,27 @@
 
 @mixin left-to-right($duration: 0.6s, $delay: 0.5s, $distance: 20px) {
   opacity: 0;
-  animation: lefToRight $duration ease-in-out $delay forwards;
+  animation: leftToRight $duration ease-in-out $delay forwards;
 
-  @keyframes lefToRight {
+  @keyframes leftToRight {
     from {
       opacity: 0;
       transform: translateX(-$distance);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+@mixin right-to-left($duration: 0.6s, $delay: 0.5s, $distance: 20px) {
+  opacity: 0;
+  animation: rightToLeft $duration ease-in-out $delay forwards;
+
+  @keyframes rightToLeft {
+    from {
+      opacity: 0;
+      transform: translateX($distance);
     }
     to {
       opacity: 1;

@@ -17,7 +17,14 @@ export default function Header() {
       <Container>
         <div className={styles.headerInner}>
           <a className={styles.logo} href="/">
-            <img src={Logo} alt="Coca logo" />
+            <img
+              src={Logo}
+              alt="Coca logo"
+              width="140"
+              height="66"
+              loading="eager"
+              fetchPriority="high"
+            />
           </a>
 
           <div className={styles.actions}>

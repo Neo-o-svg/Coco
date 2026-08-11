@@ -1,0 +1,112 @@
+@use "../../styles/_mixins" as mix;
+
+.hero {
+  @include mix.flex-center;
+  padding-top: 50px;
+  gap: 50px;
+
+  & .heroContent {
+    max-width: 740px;
+  }
+
+  & .heroTitle {
+    font-size: 80px;
+    line-height: 120%;
+    font-weight: bold;
+    margin-bottom: 100px;
+  }
+
+  & .text {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 42px;
+    width: 600px;
+    padding-left: 100px;
+    margin-bottom: 50px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url("../../assets/icons/Line.svg");
+      width: 76px;
+      height: 2px;
+      left: 0;
+      top: 15%;
+    }
+  }
+
+  & .heroTitle,
+  & .text {
+    @include mix.left-to-right($delay: 1.5s, $distance: 100px);
+  }
+
+  & .tryForFreeCapture {
+    width: 471px;
+    @include mix.left-to-right($delay: 2s, $distance: 100px);
+  }
+
+  & .emailInput {
+    width: 280px;
+    height: 47px;
+    border: none;
+    outline-style: none;
+    padding: 10px;
+
+    &::placeholder {
+      color: var(--text);
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  & .tryButton {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    border: none;
+    background-color: var(--dark);
+    width: 175px;
+    height: 56px;
+    padding: 10px;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  & .heroImages {
+    @include mix.right-to-left($delay: 1.75s, $distance: 100px);
+    position: relative;
+    padding-top: 100px;
+
+    & img {
+      border-radius: 10px;
+    }
+
+    & .customer {
+      width: 214px;
+      height: 221px;
+      position: absolute;
+      top: 10%;
+      right: -40%;
+      box-shadow: 28px 23px 86px -3px #b8d4c9ff;
+    }
+
+    & .sales {
+      width: 419px;
+      height: 346px;
+      margin-bottom: 30px;
+      box-shadow: 28px 23px 86px -3px #b8d4c9ff;
+    }
+
+    & .statistics {
+      width: 419px;
+      height: 119px;
+    }
+  }
+}
