@@ -24,48 +24,39 @@
 }
 
 body {
-  margin: 0;
   font-family: var(--inter);
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
-}
-
 a {
-  text-decoration: none;
   color: var(--text-h);
+  text-decoration: none;
 }
 
 img {
-  max-width: 100%;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   display: block;
+}
+
+.section {
+  padding: 80px 10px;
+}
+
+.fullHeightWrapper {
+  height: 100vh;
+}
+
+.sectionHeaderBetween {
+  justify-content: space-between;
+}
+
+.sectionHeaderColumnCenter {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sectionHeaderColumnStart {
+  flex-direction: column;
+  justify-content: start;
 }

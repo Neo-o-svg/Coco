@@ -1,0 +1,31 @@
+@use "../../styles/_mixins.scss" as mix;
+
+.item {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  width: 568px;
+  height: 273px;
+
+  & .imageWrapper {
+    max-width: 240px;
+    width: 100%;
+  }
+
+  & .content {
+    width: 268px;
+    padding: 10px 0;
+
+    & .title {
+      font-size: 32px;
+      line-height: 42px;
+      margin-bottom: 20px;
+    }
+
+    & .text {
+      font-size: 16px;
+      line-height: 26px;
+      color: var(--text);
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@use "../../styles/mixins" as mix;
+
+.slide {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 10px;
+
+  & .imageWrapper {
+    max-width: 582px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 15px;
+  }
+
+  & .content {
+    max-width: 585px;
+    width: 100%;
+    & .publishedData {
+      @include mix.flex-align-center();
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      & span {
+        color: var(--text);
+        font-size: 14px;
+        line-height: 150%;
+      }
+    }
+
+    & .title {
+      font-size: 32px;
+      line-height: 150%;
+    }
+  }
+}

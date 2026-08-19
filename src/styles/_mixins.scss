@@ -1,3 +1,7 @@
+@use "sass:math";
+
+$counter: 0;
+
 @mixin flex-center {
   display: flex;
   align-items: center;
@@ -9,10 +13,13 @@
 }
 
 @mixin fade-in-up($duration: 0.6s, $delay: 0.5s, $distance: 20px) {
-  opacity: 0;
-  animation: fadeInUp $duration ease-in-out $delay forwards;
+  $counter: $counter + 1 !global;
+  $name: fadeInUp-#{$counter};
 
-  @keyframes fadeInUp {
+  opacity: 0;
+  animation: #{$name} $duration ease-in-out $delay forwards;
+
+  @keyframes #{$name} {
     from {
       opacity: 0;
       transform: translateY($distance);
@@ -24,14 +31,37 @@
   }
 }
 
-@mixin left-to-right($duration: 0.6s, $delay: 0.5s, $distance: 20px) {
-  opacity: 0;
-  animation: leftToRight $duration ease-in-out $delay forwards;
+@mixin fade-in-down($duration: 1s, $delay: 0.5s, $distance: 20px) {
+  $counter: $counter + 1 !global;
+  $name: fadeInDown-#{$counter};
 
-  @keyframes leftToRight {
+  opacity: 0;
+  animation: #{$name} $duration ease-in-out $delay forwards;
+
+  @keyframes #{$name} {
     from {
       opacity: 0;
-      transform: translateX(-$distance);
+      transform: translateY(-$distance);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@mixin left-to-right($duration: 0.6s, $delay: 0.5s, $distance: 100px) {
+  $counter: $counter + 1 !global;
+  $name: leftToRight-#{$counter};
+
+  opacity: 0;
+  transform: translateX(-#{$distance});
+  animation: #{$name} $duration ease-in-out $delay forwards;
+
+  @keyframes #{$name} {
+    from {
+      opacity: 0;
+      transform: translateX(-#{$distance});
     }
     to {
       opacity: 1;
@@ -39,14 +69,18 @@
     }
   }
 }
-@mixin right-to-left($duration: 0.6s, $delay: 0.5s, $distance: 20px) {
-  opacity: 0;
-  animation: rightToLeft $duration ease-in-out $delay forwards;
+@mixin right-to-left($duration: 0.6s, $delay: 0.5s, $distance: 100px) {
+  $counter: $counter + 1 !global;
+  $name: rightToLeft-#{$counter};
 
-  @keyframes rightToLeft {
+  opacity: 0;
+  transform: translateX(#{$distance});
+  animation: #{$name} $duration ease-in-out $delay forwards;
+
+  @keyframes #{$name} {
     from {
       opacity: 0;
-      transform: translateX($distance);
+      transform: translateX(#{$distance});
     }
     to {
       opacity: 1;

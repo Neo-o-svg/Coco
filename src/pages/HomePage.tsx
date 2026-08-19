@@ -1,11 +1,23 @@
+import CocaHelp from "../components/CocaHelp/CocaHelp";
 import Header from "../components/Header/Header";
 import Hero from "../components/Hero/Hero";
+import Passion from "../components/Passion/Passion";
+import LiftYourBusiness from "../components/LiftYourBusiness/LiftYourBusiness";
+import Partners from "../components/Partners/Partners";
+import WeDoIt from "../components/WeDoIt/WeDoIt";
+import TrendingNews from "../components/TrendingNews/TrendingNews";
 
 export default function HomePage() {
   return (
     <div>
       <Header />
       <Hero />
+      <CocaHelp />
+      <Passion />
+      <LiftYourBusiness />
+      <Partners />
+      <WeDoIt />
+      <TrendingNews />
     </div>
   );
 }

@@ -1,0 +1,51 @@
+@use "../../styles/mixins" as mix;
+
+.card {
+  opacity: 0;
+  width: 481px;
+
+  & .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  & .title {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 42px;
+    color: var(--accent);
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  & .text {
+    color: var(--text);
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+.cardsList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 250px;
+  row-gap: 50px;
+  margin-top: 100px;
+
+  $base-delay: 1.5s;
+  $step: 0.2s;
+
+  &.animate {
+    @for $i from 1 through 4 {
+      & .card:nth-child(#{$i}) {
+        $delay: $base-delay + ($i - 1) * $step;
+
+        @if $i % 2 != 0 {
+          @include mix.left-to-right($duration: 1s, $delay: $delay);
+        } @else {
+          @include mix.right-to-left($duration: 1s, $delay: $delay);
+        }
+      }
+    }
+  }
+}

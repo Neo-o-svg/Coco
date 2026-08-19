@@ -1,0 +1,76 @@
+@use "../../styles/_mixins.scss" as mix;
+
+.passion {
+  display: flex;
+  align-items: start;
+  gap: 100px;
+  margin-top: 20px;
+
+  &.animate {
+    & .imageWrapper {
+      @include mix.left-to-right();
+    }
+
+    $base-delay: 1s;
+    $step: 0.4s;
+    $total: 3;
+
+    @for $i from 1 through $total {
+      & .content > *:nth-child(#{$i}) {
+        $reverseIndex: $total - $i;
+        $delay: $base-delay + $step * $reverseIndex;
+        @include mix.right-to-left($delay: $delay);
+      }
+    }
+  }
+
+  & .imageWrapper {
+    width: 100%;
+    max-width: 585px;
+    height: 651px;
+    opacity: 0;
+  }
+
+  & .content {
+    width: 557px;
+
+    & .title {
+      font-size: 56px;
+      line-height: 120%;
+      margin-bottom: 30px;
+      opacity: 0;
+    }
+    & .text {
+      width: 360px;
+      color: var(--text);
+      font-size: 18px;
+      line-height: 32px;
+      margin-bottom: 50px;
+    }
+    & .list {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding-left: 30px;
+      width: 393px;
+
+      & .item {
+        font-size: 18px;
+        line-height: 32px;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          bottom: 50%;
+          transform: translate(-50%, -50%);
+          left: -25px;
+          width: 24px;
+          height: 24px;
+          background-image: url("../../assets/icons/CheckMark.svg");
+        }
+      }
+    }
+  }
+}

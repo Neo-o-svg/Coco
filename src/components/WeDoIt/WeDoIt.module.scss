@@ -1,0 +1,55 @@
+@use "../../styles/mixins" as mix;
+
+.weDoIt {
+  &.animate {
+    .info {
+      & .title {
+        @include mix.right-to-left($duration: 1s);
+      }
+      & .text {
+        @include mix.right-to-left($duration: 1.5s);
+      }
+    }
+
+    & .list {
+      $base-delay: 1.5s;
+      $step: 0.4s;
+
+      @for $i from 1 through 4 {
+        & > li:nth-child(#{$i}) {
+          $delay: $base-delay + ($i) * $step;
+
+          @if $i % 2 != 0 {
+            @include mix.left-to-right($duration: 1s, $delay: $delay);
+          } @else {
+            @include mix.right-to-left($duration: 1s, $delay: $delay);
+          }
+        }
+      }
+    }
+  }
+
+  .info {
+    width: 620px;
+    margin-bottom: 70px;
+
+    & .title {
+      font-size: 56px;
+      line-height: 120%;
+      margin-bottom: 20px;
+      opacity: 0;
+    }
+    & .text {
+      width: 462px;
+      font-size: 18px;
+      line-height: 32px;
+      color: var(--text);
+    }
+  }
+  .list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+    row-gap: 50px;
+  }
+}

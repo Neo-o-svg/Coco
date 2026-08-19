@@ -1,0 +1,24 @@
+@use "../../styles/mixins" as mix;
+
+.sliderWrap {
+  position: relative;
+
+  & .sliderActions {
+    position: absolute;
+    z-index: 10;
+    left: 49%;
+    // Картинка находится внутри .slide с padding: 10px, поэтому учитываем отступ top: 10px
+    top: calc(10px + (70% - 10px) / 2);
+    transform: translate(-50%, -50%);
+  }
+
+  & .sliderViewport {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  & .sliderTrack {
+    display: flex;
+    transition: transform 0.4s ease;
+  }
+}
