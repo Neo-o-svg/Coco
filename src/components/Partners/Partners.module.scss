@@ -3,58 +3,10 @@
 .partners {
   @include mix.flex-align-center();
   justify-content: space-between;
-
-  &.animate {
-    & .companiesCount {
-      & .title {
-        @include mix.left-to-right($duration: 1s);
-      }
-
-      & .text {
-        @include mix.right-to-left($duration: 1s, $delay: 4.7s);
-      }
-    }
-
-    & .companiesList {
-      $base-delay: 1s;
-      $step: 0.4s;
-      @for $i from 1 through 4 {
-        & .companiesItem:nth-child(#{$i}) {
-          $delay: $base-delay + ($i) * $step;
-          @include mix.left-to-right(
-            $duration: 1s,
-            $delay: $delay,
-            $distance: 200px
-          );
-        }
-      }
-      @for $i from 5 through 8 {
-        & .companiesItem:nth-child(#{$i}) {
-          $delay: $base-delay + ($i) * $step;
-          @include mix.right-to-left(
-            $duration: 1s,
-            $delay: $delay,
-            $distance: 200px
-          );
-        }
-      }
-    }
-  }
+  margin: 30px 0;
 
   & .companiesCount {
     width: 300px;
-
-    & .title {
-      font-size: 56px;
-      line-height: 120%;
-      margin-bottom: 20px;
-    }
-
-    & .text {
-      font-size: 18px;
-      line-height: 32px;
-      color: var(--text);
-    }
   }
 
   & .companiesList {

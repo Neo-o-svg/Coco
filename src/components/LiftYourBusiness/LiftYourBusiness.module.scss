@@ -1,33 +1,6 @@
 @use "../../styles/_mixins.scss" as mix;
 
 .liftYourBusiness {
-  &.animate {
-    & .statisticList {
-      $base-delay: 2.5s;
-      $step: 0.2s;
-
-      @for $i from 1 through 4 {
-        & > li:nth-child(#{$i}) {
-          $delay: $base-delay + ($i) * $step;
-
-          @include mix.right-to-left($delay: $delay, $distance: 200px);
-        }
-      }
-    }
-
-    & .imageWrapper {
-      @include mix.fade-in-down($distance: 100px);
-    }
-
-    & .title {
-      @include mix.fade-in-up($delay: 1.5s, $distance: 50px);
-    }
-
-    & .text {
-      @include mix.fade-in-up($delay: 2s, $distance: 50px);
-    }
-  }
-
   & .statisticList {
     @include mix.flex-align-center();
     justify-content: space-between;
@@ -45,18 +18,5 @@
     align-items: start;
     justify-content: start;
     gap: 20px;
-
-    & .title {
-      font-size: 56px;
-      line-height: 120%;
-      width: 772px;
-      flex-shrink: 0;
-    }
-    & .text {
-      font-size: 18px;
-      line-height: 32px;
-      width: 400px;
-      color: var(--text);
-    }
   }
 }

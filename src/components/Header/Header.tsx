@@ -1,8 +1,12 @@
 import Container from "../Container/Container";
+import FadeInUpElement from "../animationElements/FadeInUpElement/FadeInUpElement";
+
+import useInView from "../../hooks/useInView";
 
 import styles from "./Header.module.scss";
 
 import Logo from "../../assets/icons/logo.svg";
+import LeftToRightElement from "../animationElements/LeftToRightElement/LeftToRightElement";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
@@ -12,35 +16,41 @@ const NAV_ITEMS = [
 ];
 
 export default function Header() {
+  const { ref, isInView } = useInView();
+
   return (
-    <header className={styles.header}>
+    <header ref={ref} className={styles.header}>
       <Container>
         <div className={styles.headerInner}>
-          <a className={styles.logo} href="/">
-            <img
-              src={Logo}
-              alt="Coca logo"
-              width="140"
-              height="66"
-              loading="eager"
-              fetchPriority="high"
-            />
-          </a>
-
-          <div className={styles.actions}>
-            <nav className={styles.navigation} aria-label="Main navigation">
-              <ul>
-                {NAV_ITEMS.map(({ label, href }) => (
-                  <li key={href} className={styles.navItem}>
-                    <a href={href}>{label}</a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-            <a href="/contact" className={styles.goToArrow}>
-              Contact Us{" "}
+          <FadeInUpElement distance="40" isInView={isInView}>
+            <a className={styles.logo} href="/">
+              <img
+                src={Logo}
+                alt="Coca logo"
+                width="140"
+                height="66"
+                loading="eager"
+                fetchPriority="high"
+              />
             </a>
-          </div>
+          </FadeInUpElement>
+
+          <LeftToRightElement distance="60" isInView={isInView}>
+            <div className={styles.actions}>
+              <nav className={styles.navigation} aria-label="Main navigation">
+                <ul>
+                  {NAV_ITEMS.map(({ label, href }) => (
+                    <li key={href} className={styles.navItem}>
+                      <a href={href}>{label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+              <a href="/contact" className={styles.goToArrow}>
+                Contact Us{" "}
+              </a>
+            </div>
+          </LeftToRightElement>
         </div>
       </Container>
     </header>

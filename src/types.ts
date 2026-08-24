@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 export interface CardItem {
   image: string;
   title: string;
@@ -34,4 +36,12 @@ export interface TwoBlockSliderData {
   author: string;
   title: string;
   image: string;
+}
+
+export interface AnimatedElementProps {
+  children: ReactNode;
+  duration?: string;
+  delay?: string;
+  distance?: string;
+  className?: string;
 }

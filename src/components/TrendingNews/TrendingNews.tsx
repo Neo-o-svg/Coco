@@ -1,7 +1,9 @@
 import useInView from "../../hooks/useInView";
 
+import FadeInDownElement from "../animationElements/FadeInDownElement/FadeInDownElement";
 import Container from "../Container/Container";
-import SectionHeader from "../shared/SectionHeader/SectionHeader";
+import SectionSubtitle from "../shared/SectionSubtitle/SectionSubtitle";
+import SectionTitle from "../shared/SectionTitle/SectionTitle";
 import TwoBlockSlider from "../TwoBlockSlider/TwoBlockSlider";
 
 import styles from "./TrendingNews.module.scss";
@@ -16,16 +18,16 @@ export default function TrendingNews() {
 
   return (
     <Container>
-      <div
-        ref={ref}
-        className={`section fullHeightWrapper  ${styles.trendingNews} ${isInView ? styles.animate : ""}`}
-      >
-        <SectionHeader
-          title={headerData.title}
-          text={headerData.text}
-          className="sectionHeaderColumnCenter"
-        />
-        <TwoBlockSlider />
+      <div ref={ref} className="section">
+        <FadeInDownElement isInView={isInView}>
+          <div className={styles.sectionHeader}>
+            <SectionTitle title={headerData.title} />
+            <SectionSubtitle text={headerData.text} />
+          </div>
+        </FadeInDownElement>
+        <FadeInDownElement isInView={isInView} delay="1">
+          <TwoBlockSlider />
+        </FadeInDownElement>
       </div>
     </Container>
   );

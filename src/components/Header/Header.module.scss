@@ -31,13 +31,8 @@
     justify-content: space-between;
   }
 
-  & .logo {
-    @include mix.fade-in-up($distance: 40px);
-  }
-
   & .actions {
     @include mix.flex-center;
-    @include mix.left-to-right($delay: 1s, $distance: 60px);
 
     gap: 50px;
   }

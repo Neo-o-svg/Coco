@@ -2,28 +2,43 @@ import { cards } from "../../data";
 
 import type { CardItem } from "../../types";
 
+import LeftToRightElement from "../animationElements/LeftToRightElement/LeftToRightElement";
+import RightToLeftElement from "../animationElements/RightToLeftElement/RightToLeftElement";
+
 import styles from "./HelpCards.module.scss";
 
 interface HelpCardProps {
   image: string;
   title: string;
   text: string;
+  index: number;
+  isInView: boolean;
 }
 
-function HelpCard({ image, title, text }: HelpCardProps) {
+function HelpCard({ image, title, text, index, isInView }: HelpCardProps) {
+  const baseDelay = 1.5;
+  const step = 0.2;
+
+  const delay = (baseDelay + index * step).toString();
+
+  const AnimationWrapper =
+    index % 2 === 0 ? LeftToRightElement : RightToLeftElement;
+
   return (
-    <li className={styles.card}>
-      <img
-        className={styles.icon}
-        src={image}
-        alt={title}
-        width="40"
-        height="40"
-        loading="lazy"
-      />
-      <h3 className={styles.title}>{title}</h3>
-      <p className={styles.text}>{text}</p>
-    </li>
+    <AnimationWrapper delay={delay} isInView={isInView}>
+      <li className={styles.card}>
+        <img
+          className={styles.icon}
+          src={image}
+          alt={title}
+          width="40"
+          height="40"
+          loading="lazy"
+        />
+        <h3 className={styles.title}>{title}</h3>
+        <p className={styles.text}>{text}</p>
+      </li>
+    </AnimationWrapper>
   );
 }
 
@@ -33,13 +48,15 @@ interface MainProps {
 
 export default function HelpCards({ isInView }: MainProps) {
   return (
-    <ul className={`${styles.cardsList} ${isInView ? styles.animate : ""}`}>
+    <ul className={styles.cardsList}>
       {cards.map((card: CardItem, index: number) => (
         <HelpCard
           key={index}
           image={card.image}
           title={card.title}
           text={card.text}
+          index={index}
+          isInView={isInView}
         />
       ))}
     </ul>

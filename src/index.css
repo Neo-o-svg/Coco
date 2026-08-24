@@ -47,16 +47,6 @@ img {
   height: 100vh;
 }
 
-.sectionHeaderBetween {
-  justify-content: space-between;
-}
-
-.sectionHeaderColumnCenter {
-  flex-direction: column;
-  justify-content: center;
-}
-
-.sectionHeaderColumnStart {
-  flex-direction: column;
-  justify-content: start;
+.whiteText {
+  color: var(--accent);
 }

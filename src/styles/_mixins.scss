@@ -12,6 +12,14 @@ $counter: 0;
   align-items: center;
 }
 
+@mixin animated-element($name) {
+  animation-name: #{$name};
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: var(--duration, 1s);
+  animation-delay: var(--delay, 0.5s);
+}
+
 @mixin fade-in-up($duration: 0.6s, $delay: 0.5s, $distance: 20px) {
   $counter: $counter + 1 !global;
   $name: fadeInUp-#{$counter};
@@ -69,6 +77,7 @@ $counter: 0;
     }
   }
 }
+
 @mixin right-to-left($duration: 0.6s, $delay: 0.5s, $distance: 100px) {
   $counter: $counter + 1 !global;
   $name: rightToLeft-#{$counter};
