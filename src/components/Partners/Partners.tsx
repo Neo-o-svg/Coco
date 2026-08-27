@@ -1,12 +1,11 @@
-import { companyLogos } from "../../data";
-
-import useInView from "../../hooks/useInView";
+import { companyLogos, partnersHeaderData } from "../../data";
 
 import LeftToRightElement from "../animationElements/LeftToRightElement/LeftToRightElement";
 import RightToLeftElement from "../animationElements/RightToLeftElement/RightToLeftElement";
-import Container from "../Container/Container";
-import SectionSubtitle from "../shared/SectionSubtitle/SectionSubtitle";
-import SectionTitle from "../shared/SectionTitle/SectionTitle";
+
+import Section from "../templates/Section";
+import SectionSubtitle from "../shared/Text/SectionSubtitle/SectionSubtitle";
+import SectionTitle from "../shared/Text/SectionTitle/SectionTitle";
 
 import styles from "./Partners.module.scss";
 
@@ -35,36 +34,31 @@ function CompanyItem({ icon, name, index, isInView }: CompanyItemProps) {
 }
 
 export default function Partners() {
-  const { ref, isInView } = useInView();
-
-  const headerData = {
-    title: "890+",
-    text: " some big companies that we work with, and trust us very much",
-  };
-
   return (
-    <Container>
-      <div ref={ref} className={`section ${styles.partners}`}>
-        <div className={styles.companiesCount}>
-          <LeftToRightElement isInView={isInView}>
-            <SectionTitle title={headerData.title} />
-          </LeftToRightElement>
-          <RightToLeftElement isInView={isInView} delay="4.7">
-            <SectionSubtitle text={headerData.text} />
-          </RightToLeftElement>
-        </div>
-        <ul className={styles.companiesList}>
-          {companyLogos.map(({ id, name, icon }, index) => (
-            <CompanyItem
-              key={id}
-              icon={icon}
-              name={name}
-              index={index}
-              isInView={isInView}
-            />
-          ))}
-        </ul>
-      </div>
-    </Container>
+    <Section className={styles.partners}>
+      {(isInView) => (
+        <>
+          <div className={styles.companiesCount}>
+            <LeftToRightElement isInView={isInView}>
+              <SectionTitle title={partnersHeaderData.title} />
+            </LeftToRightElement>
+            <RightToLeftElement isInView={isInView} delay="4.7">
+              <SectionSubtitle text={partnersHeaderData.subtitle} />
+            </RightToLeftElement>
+          </div>
+          <ul className={styles.companiesList}>
+            {companyLogos.map(({ id, name, icon }, index) => (
+              <CompanyItem
+                key={id}
+                icon={icon}
+                name={name}
+                index={index}
+                isInView={isInView}
+              />
+            ))}
+          </ul>
+        </>
+      )}
+    </Section>
   );
 }

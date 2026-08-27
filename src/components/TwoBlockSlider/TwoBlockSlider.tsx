@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import DoubleArrowButton from "../shared/DoubleArrowButton/DoubleArrowButton";
+import DoubleArrowButton from "../shared/Buttons/DoubleArrowButton/DoubleArrowButton";
 import TwoBlockSliderItem from "../TwoBlockSliderItem/TwoBlockSliderItem";
 
 import { twoBlockSlider } from "../../data";

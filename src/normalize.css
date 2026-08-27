@@ -53,7 +53,7 @@ ul {
   чтобы избежать взаимодействие с более сложным селектором
  */
 p {
-  --paragraphMarginBottom: 24px;
+  --paragraphMarginBottom: 0px;
 
   margin-block: 0;
 }
@@ -114,6 +114,12 @@ a {
 button,
 label {
   cursor: pointer;
+}
+
+button {
+  border: none;
+  background: none;
+  padding: 0;
 }
 
 /**

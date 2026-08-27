@@ -1,0 +1,58 @@
+@use "../../styles/mixins" as mix;
+
+.slide {
+  flex: 0 0 80%;
+  margin: 0 10%;
+  padding: 10px;
+
+  & .rate {
+    display: block;
+    position: relative;
+    padding-left: 140px;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url("../../assets/icons/5stars.svg");
+      width: 132px;
+      height: 20px;
+      left: 0;
+      top: 0;
+    }
+  }
+  & .comment {
+    font-size: 40px;
+    line-height: 130%;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  & .userComment {
+    @include mix.flex-align-center();
+
+    & .userPhoto {
+      max-width: 56px;
+      width: 100%;
+      height: 56px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    & .userInfo {
+      display: flex;
+      align-items: start;
+      flex-direction: column;
+      margin-left: 20px;
+
+      & .name {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 26px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@use "../../styles/mixins" as mix;
+
+.footer {
+  position: relative;
+  margin-top: 50px;
+
+  & .footerTop {
+    @include mix.flex-align-center();
+    justify-content: space-between;
+    padding-top: 80px;
+    margin-bottom: 100px;
+  }
+
+  & .footerBottom {
+    @include mix.flex-align-center();
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    & .footerLeft {
+      display: flex;
+      align-items: start;
+      flex-direction: column;
+      width: 292px;
+    }
+
+    & .footerRight {
+      @include mix.flex-align-center();
+      justify-content: space-between;
+      flex-wrap: wrap;
+      row-gap: 20px;
+      width: 764px;
+    }
+  }
+
+  & .copyright {
+    @include mix.flex-center();
+    padding: 40px 0;
+    border-top: 2px solid var(--light);
+
+    & .copyrightText {
+      font-size: 16px;
+      line-height: 24px;
+      color: var(--light-text);
+    }
+  }
+}

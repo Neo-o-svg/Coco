@@ -1,0 +1,9 @@
+@use "../../styles/mixins" as mix;
+
+.customerSay {
+  & .sectionHeader {
+    @include mix.flex-align-center();
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+}

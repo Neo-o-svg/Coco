@@ -2,6 +2,9 @@ import type {
   CardItem,
   CheckPassionItem,
   CompanyLogo,
+  FooterListItem,
+  HeaderData,
+  OneBlockSliderData,
   statisticItem,
   TwoBlockSliderData,
   weDoItItem,
@@ -28,6 +31,8 @@ import MakeYourBusiness from "./assets/images/MakeYourBusiness.jpg";
 
 import TrendingNews_1 from "./assets/images/TrendingNews_1.jpg";
 import TrendingNews_2 from "./assets/images/TrendingNews_2.jpg";
+
+import CommentUserIcon from "./assets/icons/comment_user_icon.jpg";
 
 export const cards: CardItem[] = [
   {
@@ -159,3 +164,109 @@ export const twoBlockSlider: TwoBlockSliderData[] = [
     image: TrendingNews_2,
   },
 ];
+
+export const oneBlockSlider: OneBlockSliderData[] = [
+  {
+    id: 1,
+    rate: "5.0",
+    comment: `“With Agency the results are very satisfying. wrapped with Hight quality and innovative design that makes a surge of visitors on my website”`,
+    photo: CommentUserIcon,
+    name: "Renee Wells",
+    position: "Product Designer, Quotient",
+  },
+  {
+    id: 2,
+    rate: "5.0",
+    comment: `“With Agency the results are very satisfying. wrapped with Hight quality and innovative design that makes a surge of visitors on my website”`,
+    photo: CommentUserIcon,
+    name: "Renee Wells",
+    position: "Product Designer, Quotient",
+  },
+  {
+    id: 3,
+    rate: "5.0",
+    comment: `“With Agency the results are very satisfying. wrapped with Hight quality and innovative design that makes a surge of visitors on my website”`,
+    photo: CommentUserIcon,
+    name: "Renee Wells",
+    position: "Product Designer, Quotient",
+  },
+];
+
+export const footerListData: FooterListItem[] = [
+  {
+    type: "Company",
+    items: ["About", "Pricing", "Jobs", "Blog"],
+  },
+  {
+    type: "Product",
+    items: [
+      "Sales Software",
+      "Marketplace",
+      "Terms & Conditions",
+      "Privacy Policy",
+    ],
+  },
+  {
+    type: "Discover",
+    items: ["CRM Comparision", "Partner Program", "What is CRM", "Resource"],
+  },
+  {
+    type: "Help Center",
+    items: ["Community", "Knowledge Base", "Academy", "Support"],
+  },
+];
+
+export const heroHeaderData: HeaderData = {
+  title: "Digitally forward creative",
+  subtitle: `When it comes to interactive marketing, we've got you covered. Be where the world is going`,
+};
+
+export const cocaHelpHeaderData: HeaderData = {
+  title: `Coca help our client solve complex customer problems with date
+            that does more.`,
+  subtitle: `Our platform offers the modern enterprise full control of how date
+            can be access and used with industry leading software solutions
+            for identity, activation, and date collaboration`,
+};
+
+export const passionHeaderData: HeaderData = {
+  title: "Passion to increase company revenue up to 85%",
+  subtitle: `Automate your sales, marketing and service in one platform. 
+          Avoid
+          date leaks and enable consistent messaging`,
+};
+
+export const liftBusinessHeaderData: HeaderData = {
+  title: `Lift your business to new heights with our digital marketing
+              services`,
+  subtitle: `To build software that gives customer facing teams in small and
+              medium-sized businesses the ability to create rewarding and
+              long-lasting relationships with customers`,
+};
+
+export const partnersHeaderData: HeaderData = {
+  title: "890+",
+  subtitle: " some big companies that we work with, and trust us very much",
+};
+
+export const weDoItHeaderData: HeaderData = {
+  title: "Advertise, analyze, and optimize! We do it all for you",
+  subtitle: `Build more meaningful and lasting relationships - <br /> better
+              understand their needs, identify new opportunities to help address
+              any problems faster`,
+};
+
+export const trendingNewsHeaderData: HeaderData = {
+  title: "Trending news from Coca",
+  subtitle: "we have some new Service to pamper you",
+};
+
+export const customerSayHeaderData: HeaderData = {
+  title: "What our customer are saying",
+  subtitle: `We are trusted numerous companies from different business to meet their needs`,
+};
+
+export const thinkBeyondHeaderData: HeaderData = {
+  title: "Think beyond the wave",
+  subtitle: `Ask about Sans products, pricing, implementation, or anything else. Our highly trained reps are standing by, ready to help`,
+};

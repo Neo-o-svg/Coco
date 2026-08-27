@@ -6,6 +6,8 @@ import LiftYourBusiness from "../components/LiftYourBusiness/LiftYourBusiness";
 import Partners from "../components/Partners/Partners";
 import WeDoIt from "../components/WeDoIt/WeDoIt";
 import TrendingNews from "../components/TrendingNews/TrendingNews";
+import CustomerSay from "../components/CustomerSay/CustomerSay";
+import Footer from "../components/Footer/Footer";
 
 export default function HomePage() {
   return (
@@ -18,6 +20,8 @@ export default function HomePage() {
       <Partners />
       <WeDoIt />
       <TrendingNews />
+      <CustomerSay />
+      <Footer />
     </div>
   );
 }

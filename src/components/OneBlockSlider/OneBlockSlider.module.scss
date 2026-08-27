@@ -1,0 +1,20 @@
+.sliderWrap {
+  position: relative;
+
+  & .sliderActions {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    bottom: 0;
+  }
+
+  & .sliderViewport {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  & .sliderTrack {
+    display: flex;
+    transition: transform 1s ease;
+  }
+}

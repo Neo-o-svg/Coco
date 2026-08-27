@@ -1,9 +1,12 @@
 @use "../../styles/_mixins.scss" as mix;
 
 .partners {
+  $border: 1px solid var(--light);
   @include mix.flex-align-center();
   justify-content: space-between;
   margin: 30px 0;
+  border-top: $border;
+  border-bottom: $border;
 
   & .companiesCount {
     width: 300px;

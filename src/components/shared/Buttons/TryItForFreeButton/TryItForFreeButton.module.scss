@@ -1,0 +1,18 @@
+.tryButton {
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  border: none;
+  background-color: var(--dark);
+  width: 175px;
+  height: 56px;
+  padding: 10px;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}

@@ -38,10 +38,39 @@ export interface TwoBlockSliderData {
   image: string;
 }
 
+export interface OneBlockSliderData {
+  id: number;
+  rate: string;
+  comment: string;
+  photo: string;
+  name: string;
+  position: string;
+}
+
 export interface AnimatedElementProps {
   children: ReactNode;
   duration?: string;
   delay?: string;
   distance?: string;
   className?: string;
+}
+
+export interface FooterListItem {
+  type: string;
+  items: string[];
+}
+
+export interface HeaderData {
+  title: string;
+  subtitle: string;
+}
+
+export interface BackgroundDecorProps {
+  src: string;
+  width: string;
+  height: string;
+  top?: string;
+  left?: string;
+  right?: string;
+  bottom?: string;
 }

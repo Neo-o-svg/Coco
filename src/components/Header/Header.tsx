@@ -1,12 +1,13 @@
-import Container from "../Container/Container";
-import FadeInUpElement from "../animationElements/FadeInUpElement/FadeInUpElement";
-
 import useInView from "../../hooks/useInView";
 
-import styles from "./Header.module.scss";
-
-import Logo from "../../assets/icons/logo.svg";
+import FadeInUpElement from "../animationElements/FadeInUpElement/FadeInUpElement";
 import LeftToRightElement from "../animationElements/LeftToRightElement/LeftToRightElement";
+
+import Container from "../templates/Container/Container";
+
+import Logo from "../shared/Logo/Logo";
+
+import styles from "./Header.module.scss";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
@@ -23,16 +24,7 @@ export default function Header() {
       <Container>
         <div className={styles.headerInner}>
           <FadeInUpElement distance="40" isInView={isInView}>
-            <a className={styles.logo} href="/">
-              <img
-                src={Logo}
-                alt="Coca logo"
-                width="140"
-                height="66"
-                loading="eager"
-                fetchPriority="high"
-              />
-            </a>
+            <Logo />
           </FadeInUpElement>
 
           <LeftToRightElement distance="60" isInView={isInView}>

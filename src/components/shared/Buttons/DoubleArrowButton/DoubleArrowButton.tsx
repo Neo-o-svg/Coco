@@ -1,6 +1,6 @@
 import styles from "./DoubleArrowButton.module.scss";
 
-import arrowsImage from "../../../assets/icons/arrowsImage.png";
+import arrowsImage from "../../../../assets/icons/arrowsImage.png";
 
 interface DoubleArrowButtonProps {
   onLeftClick: () => void;

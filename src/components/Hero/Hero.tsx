@@ -1,32 +1,45 @@
 import { useState } from "react";
 
-import Container from "../Container/Container";
+import useInView from "../../hooks/useInView";
+
+import { heroHeaderData } from "../../data";
+
 import LeftToRightElement from "../animationElements/LeftToRightElement/LeftToRightElement";
 import RightToLeftElement from "../animationElements/RightToLeftElement/RightToLeftElement";
+import FadeInUpElement from "../animationElements/FadeInUpElement/FadeInUpElement";
 
 import Customer_Growth from "../../assets/icons/Customer_Growth_Light.png";
 import Sales from "../../assets/icons/Sales_Light.png";
 import Statistic from "../../assets/icons/Statistic_Light.png";
+import PinkEllipse from "../../assets/icons/EllipsePink.png";
+import GreenEllipse from "../../assets/icons/EllipseGreen.png";
 
-import useInView from "../../hooks/useInView";
+import HighlightedSubtitle from "../shared/Text/HighlightedSubtitle/HighlightedSubtitle";
+import TryItForFreeButton from "../shared/Buttons/TryItForFreeButton/TryItForFreeButton";
+import Container from "../templates/Container/Container";
+import BackgroundDecor from "../shared/BackgroundDecor/BackgroundDecor";
 
 import styles from "./Hero.module.scss";
-import HighlightedSubtitle from "../shared/HighlightedSubtitle/HighlightedSubtitle";
 
 export default function Hero() {
   const { ref, isInView } = useInView();
   const [value, setValue] = useState("");
-
-  const subtitle = ` When it comes to interactive marketing, we've got you covered. Be where the world is going`;
 
   return (
     <div ref={ref} className="fullHeightWrapper">
       <Container>
         <div className={styles.hero}>
           <div className={styles.heroContent}>
+            <BackgroundDecor
+              src={PinkEllipse}
+              width="551px"
+              height="551px"
+              top="15%"
+              left="10%"
+            />
             <LeftToRightElement isInView={isInView} delay="1.5">
-              <h1 className={styles.heroTitle}>Digitally forward creative</h1>
-              <HighlightedSubtitle text={subtitle} />
+              <h1 className={styles.heroTitle}>{heroHeaderData.title}</h1>
+              <HighlightedSubtitle text={heroHeaderData.subtitle} />
             </LeftToRightElement>
             <LeftToRightElement isInView={isInView} delay="2">
               <form className={styles.tryForFreeCapture}>
@@ -41,9 +54,7 @@ export default function Hero() {
                   required
                   className={styles.emailInput}
                 />
-                <button type="button" className={styles.tryButton}>
-                  Try for free
-                </button>
+                <TryItForFreeButton />
               </form>
             </LeftToRightElement>
           </div>

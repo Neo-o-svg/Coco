@@ -10,6 +10,8 @@
   --text-h: #1d1e25;
   --accent: #ffffff;
   --dark: #1d1e25;
+  --light: #ced1d8;
+  --light-text: #afb3bb;
 
   /* font */
   --inter: "Inter", sans-serif;
@@ -44,9 +46,13 @@ img {
 }
 
 .fullHeightWrapper {
-  height: 100vh;
+  min-height: 100dvh;
 }
 
 .whiteText {
   color: var(--accent);
+}
+
+.darkBgWrapper {
+  background-color: var(--text-h);
 }
