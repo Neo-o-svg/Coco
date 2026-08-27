@@ -1,11 +1,12 @@
 import { trendingNewsHeaderData } from "../../data";
 
-import FadeInDownElement from "../animationElements/FadeInDownElement/FadeInDownElement";
+import TwoBlockSlider from "../TwoBlockSlider/TwoBlockSlider";
 
+import FadeInDownElement from "../templates/animationElements/FadeInDownElement/FadeInDownElement";
 import Section from "../templates/Section";
+
 import SectionSubtitle from "../shared/Text/SectionSubtitle/SectionSubtitle";
 import SectionTitle from "../shared/Text/SectionTitle/SectionTitle";
-import TwoBlockSlider from "../TwoBlockSlider/TwoBlockSlider";
 
 import styles from "./TrendingNews.module.scss";
 

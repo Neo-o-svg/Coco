@@ -1,16 +1,16 @@
-import type { AnimatedElementProps } from "../../../types";
+import type { AnimatedElementProps } from "../../../../types";
 
-import AnimatedElement from "../../templates/AnimatedElement";
+import AnimatedElement from "../../AnimatedElement";
 
-import styles from "./FadeInUpElement.module.scss";
+import styles from "./FadeInDownElement.module.scss";
 
-export default function FadeInUpElement({
+export default function FadeInDownElement({
   children,
   duration,
   delay,
   distance,
   isInView,
-}: AnimatedElementProps & { isInView?: boolean }) {
+}: AnimatedElementProps & { isInView: boolean }) {
   return (
     <AnimatedElement
       children={children}

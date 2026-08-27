@@ -2,8 +2,8 @@ import { cards } from "../../data";
 
 import type { CardItem } from "../../types";
 
-import LeftToRightElement from "../animationElements/LeftToRightElement/LeftToRightElement";
-import RightToLeftElement from "../animationElements/RightToLeftElement/RightToLeftElement";
+import LeftToRightElement from "../templates/animationElements/LeftToRightElement/LeftToRightElement";
+import RightToLeftElement from "../templates/animationElements/RightToLeftElement/RightToLeftElement";
 
 import styles from "./HelpCards.module.scss";
 

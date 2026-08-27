@@ -2,10 +2,6 @@ import { footerListData, thinkBeyondHeaderData } from "../../data";
 
 import useInView from "../../hooks/useInView";
 
-import FadeInUpElement from "../animationElements/FadeInUpElement/FadeInUpElement";
-import LeftToRightElement from "../animationElements/LeftToRightElement/LeftToRightElement";
-import RightToLeftElement from "../animationElements/RightToLeftElement/RightToLeftElement";
-
 import Container from "../templates/Container/Container";
 import FooterList from "../shared/FooterList/FooterList";
 import HighlightedSubtitle from "../shared/Text/HighlightedSubtitle/HighlightedSubtitle";
@@ -18,8 +14,12 @@ import BackgroundDecor from "../shared/BackgroundDecor/BackgroundDecor";
 import PinkEllipse from "../../assets/icons/EllipsePink.png";
 import GreenEllipse from "../../assets/icons/EllipseGreen.png";
 
+import FadeInDownElement from "../templates/animationElements/FadeInDownElement/FadeInDownElement";
+import RightToLeftElement from "../templates/animationElements/RightToLeftElement/RightToLeftElement";
+import LeftToRightElement from "../templates/animationElements/LeftToRightElement/LeftToRightElement";
+import FadeInUpElement from "../templates/animationElements/FadeInUpElement/FadeInUpElement";
+
 import styles from "./Footer.module.scss";
-import FadeInDownElement from "../animationElements/FadeInDownElement/FadeInDownElement";
 
 export default function Footer() {
   const { ref, isInView } = useInView();

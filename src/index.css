@@ -27,6 +27,7 @@
 
 body {
   font-family: var(--inter);
+  overflow-x: hidden;
 }
 
 a {

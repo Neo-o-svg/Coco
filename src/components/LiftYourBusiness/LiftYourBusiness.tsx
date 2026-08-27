@@ -6,9 +6,9 @@ import Section from "../templates/Section";
 import SectionTitle from "../shared/Text/SectionTitle/SectionTitle";
 import SectionSubtitle from "../shared/Text/SectionSubtitle/SectionSubtitle";
 
-import FadeInDownElement from "../animationElements/FadeInDownElement/FadeInDownElement";
-import FadeInUpElement from "../animationElements/FadeInUpElement/FadeInUpElement";
-import RightToLeftElement from "../animationElements/RightToLeftElement/RightToLeftElement";
+import RightToLeftElement from "../templates/animationElements/RightToLeftElement/RightToLeftElement";
+import FadeInDownElement from "../templates/animationElements/FadeInDownElement/FadeInDownElement";
+import FadeInUpElement from "../templates/animationElements/FadeInUpElement/FadeInUpElement";
 
 import businessImage from "../../assets/images/liftYourBusiness.jpg";
 

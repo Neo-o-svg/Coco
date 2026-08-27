@@ -1,10 +1,9 @@
-import type { AnimatedElementProps } from "../../../types";
+import type { AnimatedElementProps } from "../../../../types";
+import AnimatedElement from "../../AnimatedElement";
 
-import AnimatedElement from "../../templates/AnimatedElement";
+import styles from "./RightToLeftElement.module.scss";
 
-import styles from "./FadeInDownElement.module.scss";
-
-export default function FadeInDownElement({
+export default function RightToLeftElement({
   children,
   duration,
   delay,

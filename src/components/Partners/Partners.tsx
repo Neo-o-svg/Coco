@@ -1,11 +1,11 @@
 import { companyLogos, partnersHeaderData } from "../../data";
 
-import LeftToRightElement from "../animationElements/LeftToRightElement/LeftToRightElement";
-import RightToLeftElement from "../animationElements/RightToLeftElement/RightToLeftElement";
-
 import Section from "../templates/Section";
 import SectionSubtitle from "../shared/Text/SectionSubtitle/SectionSubtitle";
 import SectionTitle from "../shared/Text/SectionTitle/SectionTitle";
+
+import LeftToRightElement from "../templates/animationElements/LeftToRightElement/LeftToRightElement";
+import RightToLeftElement from "../templates/animationElements/RightToLeftElement/RightToLeftElement";
 
 import styles from "./Partners.module.scss";
 

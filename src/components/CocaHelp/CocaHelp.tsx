@@ -5,7 +5,7 @@ import HelpCards from "../HelpCards/HelpCards";
 import SectionSubtitle from "../shared/Text/SectionSubtitle/SectionSubtitle";
 import SectionTitle from "../shared/Text/SectionTitle/SectionTitle";
 
-import LeftToRightElement from "../animationElements/LeftToRightElement/LeftToRightElement";
+import LeftToRightElement from "../templates/animationElements/LeftToRightElement/LeftToRightElement";
 
 export default function CocaHelp() {
   return (

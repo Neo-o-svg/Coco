@@ -1,11 +1,11 @@
 import useInView from "../../hooks/useInView";
 
-import FadeInUpElement from "../animationElements/FadeInUpElement/FadeInUpElement";
-import LeftToRightElement from "../animationElements/LeftToRightElement/LeftToRightElement";
-
 import Container from "../templates/Container/Container";
 
 import Logo from "../shared/Logo/Logo";
+
+import FadeInUpElement from "../templates/animationElements/FadeInUpElement/FadeInUpElement";
+import LeftToRightElement from "../templates/animationElements/LeftToRightElement/LeftToRightElement";
 
 import styles from "./Header.module.scss";
 

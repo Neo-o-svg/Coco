@@ -1,11 +1,11 @@
 import { weDoItHeaderData, weDoItList } from "../../data";
 
-import RightToLeftElement from "../animationElements/RightToLeftElement/RightToLeftElement";
-
 import Section from "../templates/Section";
 import SectionSubtitle from "../shared/Text/SectionSubtitle/SectionSubtitle";
 import SectionTitle from "../shared/Text/SectionTitle/SectionTitle";
 import WeDoItItem from "../WeDoItItem/WeDoItItem";
+
+import RightToLeftElement from "../templates/animationElements/RightToLeftElement/RightToLeftElement";
 
 import styles from "./WeDoIt.module.scss";
 

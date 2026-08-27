@@ -1,10 +1,10 @@
-import type { AnimatedElementProps } from "../../../types";
+import type { AnimatedElementProps } from "../../../../types";
 
-import AnimatedElement from "../../templates/AnimatedElement";
+import AnimatedElement from "../../AnimatedElement";
 
-import styles from "./RightToLeftElement.module.scss";
+import styles from "./LeftToRightElement.module.scss";
 
-export default function RightToLeftElement({
+export default function LeftToRightElement({
   children,
   duration,
   delay,
