@@ -1,28 +1,44 @@
 @use "../../styles/_mixins.scss" as mix;
 
 .partners {
-  $border: 1px solid var(--light);
   @include mix.flex-align-center();
-  justify-content: space-between;
-  margin: 30px 0;
+
+  $border: 0.1rem solid var(--light);
+
+  margin: 3rem 0;
   border-top: $border;
   border-bottom: $border;
 
+  @include mix.break(xs) {
+    flex-direction: column;
+    align-items: start;
+    row-gap: 3.2rem;
+  }
+
   & .companiesCount {
-    width: 300px;
+    width: 33rem;
+    flex-shrink: 0;
+    padding-right: 3rem;
   }
 
   & .companiesList {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 40px;
-    row-gap: 30px;
+    max-width: 76rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 4rem;
+    row-gap: 3rem;
     align-items: center;
 
     & .companiesItem {
       @include mix.flex-center();
-      width: 160px;
-      height: 90px;
+
+      width: 16rem;
+      height: 9rem;
+
+      @include mix.break(xs) {
+        width: 12.5rem;
+        height: 7rem;
+      }
     }
   }
 }

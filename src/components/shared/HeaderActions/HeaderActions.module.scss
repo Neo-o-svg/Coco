@@ -1,0 +1,73 @@
+@use "../../../styles/mixins" as mix;
+
+%underline-hover {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.4rem;
+    width: 100%;
+    height: 0.1rem;
+    background-color: var(--text-h);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+  }
+}
+
+.navigation {
+  & ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    @include mix.break(xs) {
+      flex-direction: column;
+      margin-bottom: 7rem;
+    }
+
+    & .navItem {
+      & a {
+        @extend %underline-hover;
+        font-weight: 500;
+        line-height: 2.6rem;
+        font-size: 1.6rem;
+
+        @include mix.break(xs) {
+          flex-direction: column;
+          font-size: 2.5rem;
+          line-height: 3.5rem;
+        }
+      }
+    }
+  }
+}
+
+.goToArrow {
+  @extend %underline-hover;
+  font-weight: 500;
+  line-height: 2.6rem;
+  font-size: 1.6rem;
+  position: relative;
+
+  @include mix.break(xs) {
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+  }
+
+  &::after {
+    content: " ->";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -2.5rem;
+  }
+}

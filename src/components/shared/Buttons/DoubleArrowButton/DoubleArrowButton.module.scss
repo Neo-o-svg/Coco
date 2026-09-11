@@ -2,19 +2,27 @@
 
 .arrowsWrapper {
   @include mix.flex-center();
-  --size: 80px;
+  $size: 8rem;
 
-  width: var(--size);
-  height: var(--size);
+  width: $size;
+  height: $size;
   border-radius: 50%;
   background-color: var(--accent);
   cursor: pointer;
   position: relative;
 
+  @include mix.break(xxs) {
+    $sizeMobile: 4rem;
+
+    width: $sizeMobile;
+    height: $sizeMobile;
+  }
+
   & .arrowsImg {
-    --size: 25px;
-    width: var(--size);
-    height: var(--size);
+    $size: 2.5rem;
+
+    width: $size;
+    height: $size;
     object-fit: contain;
     pointer-events: none;
   }

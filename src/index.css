@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+html {
+  /* 10px */
+  font-size: 62.5%;
+}
+
 :root {
   /* colors */
   --text: #7e8492;
@@ -43,7 +48,17 @@ img {
 }
 
 .section {
-  padding: 80px 10px;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (max-width: 76.7rem) {
+  .section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 }
 
 .fullHeightWrapper {
@@ -52,6 +67,12 @@ img {
 
 .whiteText {
   color: var(--accent);
+}
+.darkText {
+  color: var(--text-h);
+}
+.greyText {
+  color: var(--text);
 }
 
 .darkBgWrapper {

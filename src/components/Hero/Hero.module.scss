@@ -1,72 +1,168 @@
 @use "../../styles/_mixins" as mix;
 
 .hero {
-  $box_shadow: 28px 23px 86px -3px #b8d4c9ff;
+  $box_shadow: 2.8rem 2.3rem 8.6rem -0.3rem #b8d4c9ff;
 
   @include mix.flex-center;
-  padding-top: 50px;
-  margin-bottom: 120px;
+  padding-top: 5rem;
+  margin-bottom: 12rem;
+
+  @include mix.break(xs) {
+    padding-top: 1rem;
+    flex-direction: column;
+  }
 
   & .heroContent {
-    max-width: 740px;
+    max-width: 74rem;
+    position: relative;
+
+    @include mix.break(xs) {
+      @include mix.flex-center;
+      flex-direction: column;
+    }
+  }
+
+  & .mobileDecor {
+    @include mix.break(xs) {
+      $size: 22.8rem;
+
+      --decor-width-override: #{$size};
+      --decor-height-override: #{$size};
+      --decor-top-override: -80%;
+      --decor-left-override: -12.1rem;
+    }
   }
 
   & .heroTitle {
-    font-size: 80px;
+    font-size: 8rem;
     line-height: 120%;
     font-weight: bold;
-    margin-bottom: 100px;
+    margin-bottom: 10rem;
+
+    @include mix.break(sm) {
+      font-size: 5.5rem;
+      margin-bottom: 6.5rem;
+    }
+
+    @include mix.break(xs) {
+      font-size: 3.2rem;
+      line-height: 4rem;
+      margin-bottom: 5.5rem;
+      width: 30rem;
+    }
+  }
+
+  & .hSubtitleDesktop {
+    @include mix.break(xs) {
+      display: none;
+    }
+  }
+  & .hSubtitleMobile {
+    display: none;
+
+    @include mix.break(xs) {
+      display: block;
+    }
   }
 
   & .tryForFreeCapture {
-    width: 471px;
+    width: 47.1rem;
+
+    @include mix.break(xs) {
+      width: auto;
+    }
   }
 
   & .emailInput {
-    width: 280px;
-    height: 47px;
+    width: 28rem;
+    height: 4.7rem;
     border: none;
     outline-style: none;
-    padding: 10px;
-    margin-right: 10px;
-    box-shadow: 8px 11px 21px -8px var(--text);
-    border-radius: 4px;
+    padding: 1rem;
+    margin-right: 1rem;
+    box-shadow: 0.8rem 1.1rem 2.1rem -0.8rem var(--text);
+    border-radius: 0.4rem;
+
+    @include mix.break(sm) {
+      width: 24rem;
+    }
+
+    @include mix.break(xs) {
+      box-shadow: none;
+      width: 22rem;
+      height: 3.6rem;
+      border-bottom: 0.1rem solid var(--text);
+      border-radius: 0.2rem;
+    }
 
     &::placeholder {
       color: var(--text);
-      font-size: 16px;
+      font-size: 1.6rem;
       line-height: 150%;
+
+      @include mix.break(xs) {
+        font-size: 1.4rem;
+        line-height: 2rem;
+      }
     }
   }
 
   & .heroImages {
     position: relative;
-    padding-top: 100px;
+    padding-top: 10rem;
+
+    @include mix.break(xs) {
+      padding-top: 4rem;
+    }
 
     & img {
-      border-radius: 10px;
+      border-radius: 1rem;
     }
 
     & .customer {
-      width: 214px;
-      height: 221px;
+      max-width: 21.4rem;
       position: absolute;
       top: 10%;
       right: -25%;
       box-shadow: $box_shadow;
+
+      @include mix.break(lg) {
+        max-width: 18rem;
+        right: 0;
+        top: 20%;
+      }
+
+      @include mix.break(xs) {
+        max-width: 11.8rem;
+      }
     }
 
     & .sales {
-      max-width: 419px;
-      width: 100%;
-      height: 346px;
-      margin-bottom: 30px;
+      max-width: 41.9rem;
+      margin-bottom: 3rem;
       box-shadow: $box_shadow;
     }
 
+    & .customer,
+    & .sales {
+      @include mix.break(md) {
+        box-shadow: 1rem 1.3rem 2.6rem -0.3rem #b8d4c9;
+      }
+
+      @include mix.break(xs) {
+        box-shadow: $box_shadow;
+      }
+    }
+
     & .statistics {
-      width: 419px;
-      height: 119px;
+      max-width: 41.9rem;
+    }
+
+    & .sales,
+    & .statistics {
+      @include mix.break(xs) {
+        max-width: 33.5rem;
+      }
     }
   }
 }

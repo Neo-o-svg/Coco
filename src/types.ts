@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 export interface CardItem {
   image: string;
@@ -67,10 +67,6 @@ export interface HeaderData {
 
 export interface BackgroundDecorProps {
   src: string;
-  width: string;
-  height: string;
-  top?: string;
-  left?: string;
-  right?: string;
-  bottom?: string;
+  style?: CSSProperties;
+  className?: string;
 }

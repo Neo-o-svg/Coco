@@ -35,8 +35,8 @@ function HelpCard({ image, title, text, index, isInView }: HelpCardProps) {
           height="40"
           loading="lazy"
         />
-        <h3 className={styles.title}>{title}</h3>
-        <p className={styles.text}>{text}</p>
+        <h3 className={`${styles.title} whiteText`}>{title}</h3>
+        <p className={`${styles.text} greyText`}>{text}</p>
       </li>
     </AnimationWrapper>
   );

@@ -5,4 +5,11 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+
+  width: var(--decor-width-override, var(--decor-width));
+  height: var(--decor-height-override, var(--decor-height));
+  top: var(--decor-top-override, var(--decor-top));
+  left: var(--decor-left-override, var(--decor-left));
+  right: var(--decor-right-override, var(--decor-right));
+  bottom: var(--decor-bottom-override, var(--decor-bottom));
 }

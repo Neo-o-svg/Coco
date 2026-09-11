@@ -20,7 +20,7 @@ export default function OneSlideArrows({
         onClick={onLeftClick}
         aria-label="Previous"
       >
-        <img src={PrevArrow} alt="" width="18" height="18" />
+        <img src={PrevArrow} width="18" height="18" />
       </button>
       <button
         type="button"
@@ -28,7 +28,7 @@ export default function OneSlideArrows({
         onClick={onRightClick}
         aria-label="Next"
       >
-        <img src={NextArrow} alt="" width="18" height="18" />
+        <img src={NextArrow} width="18" height="18" />
       </button>
     </div>
   );

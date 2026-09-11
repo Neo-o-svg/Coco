@@ -3,8 +3,8 @@ import { trendingNewsHeaderData } from "../../data";
 import TwoBlockSlider from "../TwoBlockSlider/TwoBlockSlider";
 
 import FadeInDownElement from "../templates/animationElements/FadeInDownElement/FadeInDownElement";
-import Section from "../templates/Section";
 
+import Section from "../templates/Section";
 import SectionSubtitle from "../shared/Text/SectionSubtitle/SectionSubtitle";
 import SectionTitle from "../shared/Text/SectionTitle/SectionTitle";
 

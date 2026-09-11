@@ -1,13 +1,23 @@
+@use "../../styles/mixins" as mix;
+
 .sliderWrap {
   position: relative;
 
   & .sliderActions {
     position: absolute;
     z-index: 10;
-    left: 49%;
+    left: 50%;
     // Картинка находится внутри .slide с padding: 10px, поэтому учитываем отступ top: 10px
-    top: calc(10px + (70% - 10px) / 2);
+    top: calc(1rem + (70% - 1rem) / 2);
     transform: translate(-50%, -50%);
+
+    @include mix.break(xs) {
+      left: 90%;
+      top: 35%;
+    }
+    @include mix.break(xxs) {
+      top: 28%;
+    }
   }
 
   & .sliderViewport {

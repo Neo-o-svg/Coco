@@ -1,0 +1,51 @@
+@use "../../styles/mixins" as mix;
+
+.hamburgerButton {
+  display: none;
+  @include mix.break(xs) {
+    display: block;
+  }
+
+  & .burgerMenu {
+    position: fixed;
+    z-index: 1000;
+    background-color: var(--accent);
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    transform: translateY(-100%);
+    visibility: hidden;
+    transition:
+      transform 0.7s ease 1s,
+      visibility 1s ease 1s;
+
+    &.open {
+      transform: translateY(0);
+      visibility: visible;
+    }
+
+    & .burgerMenuHeader {
+      @include mix.flex-align-center();
+      justify-content: space-between;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      flex-shrink: 0;
+    }
+
+    & .burgerMenuMain {
+      @include mix.flex-align-center();
+      justify-content: start;
+      padding-top: 3rem;
+      flex-direction: column;
+      flex: 1;
+      overflow-y: auto;
+    }
+  }
+}

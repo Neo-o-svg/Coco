@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import useVisibleCount from "../../hooks/useVisibleCount";
+
 import DoubleArrowButton from "../shared/Buttons/DoubleArrowButton/DoubleArrowButton";
 import TwoBlockSliderItem from "../TwoBlockSliderItem/TwoBlockSliderItem";
 
@@ -7,10 +9,10 @@ import { twoBlockSlider } from "../../data";
 
 import styles from "./TwoBlockSlider.module.scss";
 
-const VISIBLE_COUNT = 2;
-
 export default function TwoBlockSlider() {
   const [activeId, setActiveId] = useState(0);
+  const VISIBLE_COUNT = useVisibleCount();
+  const SCROLL_PERCENT = VISIBLE_COUNT === 2 ? 100 : 90;
 
   const prev = () => {
     setActiveId((activeId) => {
@@ -32,7 +34,7 @@ export default function TwoBlockSlider() {
   };
 
   // сдвиг ленты: каждый слайд занимает 100% / VISIBLE_COUNT ширины окна
-  const offset = activeId * (100 / VISIBLE_COUNT);
+  const offset = activeId * (SCROLL_PERCENT / VISIBLE_COUNT);
 
   return (
     <div className={styles.sliderWrap}>

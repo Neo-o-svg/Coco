@@ -3,29 +3,60 @@
 .item {
   display: flex;
   align-items: start;
-  justify-content: space-between;
-  width: 568px;
-  height: 273px;
+  gap: 5rem;
+  max-width: 56.8rem;
+  width: 100%;
+  margin-bottom: 5rem;
+
+  @include mix.break(md) {
+    justify-self: center;
+  }
+
+  @include mix.break(xs) {
+    gap: 1.6rem;
+    margin-bottom: 2.4rem;
+  }
 
   & .imageWrapper {
-    max-width: 240px;
+    max-width: 24rem;
     width: 100%;
+
+    @include mix.break(xs) {
+      width: 16rem;
+      flex-shrink: 0;
+    }
   }
 
   & .content {
-    width: 268px;
-    padding: 10px 0;
+    width: 26.8rem;
+    padding: 1rem 0;
+
+    @include mix.break(xs) {
+      width: auto;
+      padding: 0;
+    }
 
     & .title {
-      font-size: 32px;
-      line-height: 42px;
-      margin-bottom: 20px;
+      font-size: 3.2rem;
+      line-height: 4.2rem;
+      margin-bottom: 2rem;
+
+      @include mix.break(xs) {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        margin-bottom: 0.8rem;
+      }
     }
 
     & .text {
-      font-size: 16px;
-      line-height: 26px;
+      font-size: 1.6rem;
+      line-height: 2.6rem;
       color: var(--text);
+
+      @include mix.break(xs) {
+        font-size: 1.4rem;
+        line-height: 2rem;
+      }
     }
   }
 }

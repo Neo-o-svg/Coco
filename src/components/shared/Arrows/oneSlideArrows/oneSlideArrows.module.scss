@@ -2,19 +2,28 @@
 
 .arrowsWrapper {
   @include mix.flex-center();
-  gap: 10px;
+  gap: 1rem;
 
   .prevArrow,
   .nextArrow {
     @include mix.flex-center();
-    width: 50px;
-    height: 50px;
+    $size: 5rem;
+
+    width: $size;
+    height: $size;
     border-radius: 50%;
-    border: 2px solid;
+    border: 0.2rem solid;
     transition: all 0.5s ease-in-out;
 
+    @include mix.break(xs) {
+      $sizeMobile: 2.8rem;
+
+      width: $sizeMobile;
+      height: $sizeMobile;
+    }
+
     & img {
-      $size: 18px;
+      $size: 1.8rem;
 
       width: $size;
       height: $size;

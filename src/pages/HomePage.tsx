@@ -1,6 +1,6 @@
-import CocaHelp from "../components/CocaHelp/CocaHelp";
 import Header from "../components/Header/Header";
 import Hero from "../components/Hero/Hero";
+import CocaHelp from "../components/CocaHelp/CocaHelp";
 import Passion from "../components/Passion/Passion";
 import LiftYourBusiness from "../components/LiftYourBusiness/LiftYourBusiness";
 import Partners from "../components/Partners/Partners";

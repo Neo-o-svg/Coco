@@ -3,55 +3,99 @@
 .slide {
   flex: 0 0 80%;
   margin: 0 10%;
-  padding: 10px;
+  padding: 1rem;
 
   & .rate {
     display: block;
     position: relative;
-    padding-left: 140px;
-    font-size: 16px;
-    line-height: 24px;
-    margin-bottom: 20px;
+    padding-left: 14rem;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    margin-bottom: 2rem;
+
+    @include mix.break(xs) {
+      font-size: 1.4rem;
+      line-height: 2rem;
+      margin-bottom: 1.1rem;
+      padding-left: 11rem;
+    }
 
     &::before {
       content: "";
       position: absolute;
       background-image: url("../../assets/icons/5stars.svg");
-      width: 132px;
-      height: 20px;
+      width: 13.2rem;
+      height: 2rem;
       left: 0;
       top: 0;
+
+      @include mix.break(xs) {
+        width: 11.2rem;
+      }
     }
   }
   & .comment {
-    font-size: 40px;
+    font-size: 4rem;
     line-height: 130%;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
+
+    @include mix.break(sm) {
+      font-size: 3rem;
+    }
+
+    @include mix.break(xs) {
+      font-size: 1.8rem;
+      line-height: 2.6rem;
+      margin-bottom: 0.8rem;
+    }
   }
 
   & .userComment {
     @include mix.flex-align-center();
 
     & .userPhoto {
-      max-width: 56px;
+      max-width: 5.6rem;
       width: 100%;
-      height: 56px;
+      height: 5.6rem;
       border-radius: 50%;
       overflow: hidden;
+
+      @include mix.break(xs) {
+        $size: 4rem;
+
+        width: $size;
+        height: $size;
+      }
     }
 
     & .userInfo {
       display: flex;
       align-items: start;
       flex-direction: column;
-      margin-left: 20px;
+      margin-left: 2rem;
+
+      @include mix.break(xs) {
+        margin-left: 1.6rem;
+      }
 
       & .name {
         font-weight: 700;
-        font-size: 18px;
-        line-height: 26px;
-        margin-bottom: 5px;
+        font-size: 1.8rem;
+        line-height: 2.6rem;
+        margin-bottom: 0.5rem;
+
+        @include mix.break(xs) {
+          font-size: 1.4rem;
+          line-height: 2rem;
+          margin-bottom: 0.4rem;
+        }
+      }
+
+      & .position {
+        font-size: 1.2rem;
+        line-height: 2.6rem;
+        color: var(--text);
       }
     }
   }

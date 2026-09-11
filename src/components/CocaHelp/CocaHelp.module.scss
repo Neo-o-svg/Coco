@@ -1,0 +1,16 @@
+@use "../../styles/mixins" as mix;
+
+.sectionTitle {
+  width: 80rem;
+}
+
+.subTitle {
+  width: 66rem;
+}
+
+.subTitle,
+.sectionTitle {
+  @include mix.break(sm) {
+    width: auto;
+  }
+}

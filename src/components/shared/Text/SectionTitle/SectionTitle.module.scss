@@ -1,5 +1,19 @@
+@use "../../../../styles/mixins" as mix;
+
 .title {
-  font-size: 56px;
+  font-size: 5.4rem;
   line-height: 120%;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
+
+  @include mix.break(md) {
+    font-size: 4.4rem;
+  }
+  @include mix.break(sm) {
+    font-size: 4rem;
+  }
+  @include mix.break(xs) {
+    font-size: 2.4rem;
+    line-height: 3.4rem;
+    margin-bottom: 1.6rem;
+  }
 }

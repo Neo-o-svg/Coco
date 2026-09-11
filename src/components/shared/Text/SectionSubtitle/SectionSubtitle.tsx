@@ -2,13 +2,12 @@ import styles from "./SectionSubtitle.module.scss";
 
 interface SectionSubtitleProps {
   text: string;
-  style?: React.CSSProperties;
+  className?: string;
 }
 
-export default function SectionSubtitle({ text, style }: SectionSubtitleProps) {
-  return (
-    <p className={styles.text} style={style}>
-      {text}
-    </p>
-  );
+export default function SectionSubtitle({
+  text,
+  className = "",
+}: SectionSubtitleProps) {
+  return <p className={`${styles.text} ${className}`}>{text}</p>;
 }

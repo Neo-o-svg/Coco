@@ -34,7 +34,7 @@ export default function Passion() {
             <RightToLeftElement isInView={isInView} delay="1.4">
               <SectionSubtitle
                 text={passionHeaderData.subtitle}
-                style={{ marginBottom: "50px" }}
+                className={styles.text}
               />
             </RightToLeftElement>
             <RightToLeftElement isInView={isInView} delay="1.8">

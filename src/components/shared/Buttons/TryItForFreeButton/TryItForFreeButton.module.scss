@@ -1,16 +1,28 @@
+@use "../../../../styles/mixins" as mix;
+
 .tryButton {
   color: var(--accent);
   font-weight: bold;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
   border: none;
   background-color: var(--dark);
-  width: 175px;
-  height: 56px;
-  padding: 10px;
-  border-radius: 30px;
+  width: 17.5rem;
+  height: 5.6rem;
+  padding: 1rem;
+  border-radius: 3rem;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+
+  @include mix.break(sm) {
+    width: 13rem;
+  }
+  @include mix.break(xs) {
+    width: 10.8rem;
+    height: 3.6rem;
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
 
   &:hover {
     opacity: 0.5;

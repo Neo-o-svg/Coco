@@ -2,45 +2,137 @@
 
 .footer {
   position: relative;
-  margin-top: 50px;
+  margin-top: 5rem;
+
+  @include mix.break(sm) {
+    overflow-x: hidden;
+  }
+  @include mix.break(xxs) {
+    margin-top: 0;
+  }
+
+  & .pinkMobileDecor {
+    @include mix.break(sm) {
+      $size: 32.1rem;
+      --decor-width-override: #{$size};
+      --decor-height-override: #{$size};
+      --decor-top-override: 0%;
+      --decor-left-override: 0%;
+    }
+    @include mix.break(xxs) {
+      $size: 22.1rem;
+      --decor-width-override: #{$size};
+      --decor-height-override: #{$size};
+    }
+  }
+  & .greenMobileDecor {
+    @include mix.break(sm) {
+      $size: 39.3rem;
+      --decor-width-override: #{$size};
+      --decor-height-override: #{$size};
+      --decor-bottom-override: 20%;
+      --decor-right-override: 0%;
+    }
+    @include mix.break(xxs) {
+      $size: 29.3rem;
+      --decor-width-override: #{$size};
+      --decor-height-override: #{$size};
+      --decor-bottom-override: 0%;
+    }
+  }
 
   & .footerTop {
     @include mix.flex-align-center();
     justify-content: space-between;
-    padding-top: 80px;
-    margin-bottom: 100px;
+    padding-top: 8rem;
+    margin-bottom: 10rem;
+
+    @include mix.break(sm) {
+      justify-content: normal;
+      flex-direction: column;
+      align-items: start;
+      margin-bottom: 5rem;
+    }
+    @include mix.break(xxs) {
+      margin-bottom: 5.6rem;
+    }
+
+    & .subtitle {
+      width: 60rem;
+      font-size: 2.4rem;
+      line-height: 3.4rem;
+
+      @include mix.break(sm) {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+      }
+      @include mix.break(xs) {
+        width: auto;
+      }
+      @include mix.break(xxs) {
+        margin-bottom: 2.4rem;
+      }
+    }
   }
 
   & .footerBottom {
     @include mix.flex-align-center();
     justify-content: space-between;
-    margin-bottom: 50px;
+    margin-bottom: 5rem;
+
+    @include mix.break(sm) {
+      justify-content: normal;
+      column-gap: 3rem;
+    }
+    @include mix.break(xs) {
+      align-items: start;
+      flex-direction: column;
+      gap: 3rem;
+    }
 
     & .footerLeft {
       display: flex;
       align-items: start;
       flex-direction: column;
-      width: 292px;
+      width: 29.2rem;
     }
 
     & .footerRight {
       @include mix.flex-align-center();
       justify-content: space-between;
       flex-wrap: wrap;
-      row-gap: 20px;
-      width: 764px;
+      gap: 2rem;
+      width: 76.4rem;
+
+      @include mix.break(sm) {
+        width: 38.2rem;
+        gap: 4rem;
+      }
+
+      @media (max-width: "50rem") {
+        display: none;
+      }
     }
   }
 
   & .copyright {
     @include mix.flex-center();
-    padding: 40px 0;
-    border-top: 2px solid var(--light);
+    padding: 4rem 0;
+    border-top: 0.2rem solid var(--light);
+
+    @include mix.break(xxs) {
+      padding: 2rem 0;
+    }
 
     & .copyrightText {
-      font-size: 16px;
-      line-height: 24px;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
       color: var(--light-text);
+
+      @include mix.break(xxs) {
+        font-size: 1.2rem;
+        line-height: 2rem;
+      }
     }
   }
 }

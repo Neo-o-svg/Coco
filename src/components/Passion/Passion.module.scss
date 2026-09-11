@@ -3,28 +3,50 @@
 .passion {
   display: flex;
   align-items: start;
-  gap: 100px;
-  margin-top: 40px;
+  gap: 10rem;
+  margin-top: 4rem;
+
+  @include mix.break(sm) {
+    flex-direction: column;
+    align-items: center;
+    gap: 3.2rem;
+  }
 
   & .imageWrapper {
     width: 100%;
-    max-width: 585px;
-    height: 651px;
+    max-width: 58.5rem;
   }
 
   & .content {
-    width: 557px;
+    width: 55.7rem;
+
+    @include mix.break(xs) {
+      width: auto;
+    }
+
+    & .text {
+      margin-bottom: 5rem;
+
+      @include mix.break(xxs) {
+        margin-bottom: 2.4rem;
+      }
+    }
 
     & .list {
       display: flex;
       flex-direction: column;
-      gap: 30px;
-      padding-left: 30px;
-      width: 393px;
+      gap: 3rem;
+      padding-left: 3rem;
+      width: 39.3rem;
+
+      @include mix.break(xs) {
+        width: auto;
+        gap: 1.6rem;
+      }
 
       & .item {
-        font-size: 18px;
-        line-height: 32px;
+        font-size: 1.8rem;
+        line-height: 3.2rem;
         position: relative;
 
         &::before {
@@ -33,9 +55,9 @@
           top: 50%;
           bottom: 50%;
           transform: translate(-50%, -50%);
-          left: -25px;
-          width: 24px;
-          height: 24px;
+          left: -2.5rem;
+          width: 2.4rem;
+          height: 2.4rem;
           background-image: url("../../assets/icons/CheckMark.svg");
         }
       }

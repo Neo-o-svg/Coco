@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 
 import useInView from "../../hooks/useInView";
 
@@ -19,10 +19,11 @@ import RightToLeftElement from "../templates/animationElements/RightToLeftElemen
 
 import styles from "./Hero.module.scss";
 
-
 export default function Hero() {
   const { ref, isInView } = useInView();
   const [value, setValue] = useState("");
+
+  const subtitleMobile = `Our biggest challenge is making sure we're always designing and building products that will help you run your business better.`;
 
   return (
     <div ref={ref} className="fullHeightWrapper">
@@ -31,14 +32,26 @@ export default function Hero() {
           <div className={styles.heroContent}>
             <BackgroundDecor
               src={PinkEllipse}
-              width="551px"
-              height="551px"
-              top="15%"
-              left="10%"
+              style={
+                {
+                  "--decor-width": "55.1rem",
+                  "--decor-height": "55.1rem",
+                  "--decor-top": "-15%",
+                  "--decor-left": "0",
+                } as CSSProperties
+              }
+              className={styles.mobileDecor}
             />
             <LeftToRightElement isInView={isInView} delay="1.5">
               <h1 className={styles.heroTitle}>{heroHeaderData.title}</h1>
-              <HighlightedSubtitle text={heroHeaderData.subtitle} />
+              <HighlightedSubtitle
+                text={heroHeaderData.subtitle}
+                className={styles.hSubtitleDesktop}
+              />
+              <HighlightedSubtitle
+                text={subtitleMobile}
+                className={styles.hSubtitleMobile}
+              />
             </LeftToRightElement>
             <LeftToRightElement isInView={isInView} delay="2">
               <form className={styles.tryForFreeCapture}>

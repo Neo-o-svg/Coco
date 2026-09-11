@@ -1,31 +1,62 @@
+@use "../../styles/mixins" as mix;
+
 .card {
-  width: 481px;
+  width: 48.1rem;
+  justify-self: center;
+
+  @include mix.break(xs) {
+    width: 33.5rem;
+  }
 
   & .icon {
-    width: 40px;
-    height: 40px;
+    $size: 4rem;
+
+    width: $size;
+    height: $size;
+
+    @include mix.break(xs) {
+      $small_size: 2.4rem;
+
+      width: $small_size;
+      height: $small_size;
+    }
   }
 
   & .title {
     font-weight: 600;
-    font-size: 32px;
-    line-height: 42px;
-    color: var(--accent);
-    margin-top: 20px;
-    margin-bottom: 10px;
+    font-size: 3.2rem;
+    line-height: 4.2rem;
+    margin: 2rem 0;
+
+    @include mix.break(xs) {
+      font-size: 1.8rem;
+      line-height: 2.6rem;
+      margin: 1.6rem 0;
+    }
   }
 
   & .text {
-    color: var(--text);
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+
+    @include mix.break(xs) {
+      font-size: 1.4rem;
+      line-height: 2rem;
+    }
   }
 }
 
 .cardsList {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 250px;
-  row-gap: 50px;
-  margin-top: 100px;
+  column-gap: clamp(5rem, 10.7vw, 25rem);
+  row-gap: 5rem;
+  margin-top: 10rem;
+
+  @include mix.break(md) {
+    grid-template-columns: 1fr;
+  }
+  @include mix.break(xs) {
+    margin-top: 3.2rem;
+  }
 }

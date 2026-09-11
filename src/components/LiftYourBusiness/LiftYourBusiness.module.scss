@@ -4,19 +4,38 @@
   & .statisticList {
     @include mix.flex-align-center();
     justify-content: space-between;
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
+
+    @include mix.break(sm) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    @include mix.break(xs) {
+      margin-bottom: 3.2rem;
+    }
   }
 
   & .imageWrapper {
     width: 100%;
-    max-width: 1200px;
-    margin-bottom: 50px;
+    max-width: 120rem;
+    margin-bottom: 5rem;
+
+    @include mix.break(xs) {
+      margin-bottom: 4rem;
+    }
   }
 
   & .callToActionContent {
     display: flex;
     align-items: start;
     justify-content: start;
-    gap: 20px;
+    gap: 2rem;
+
+    @include mix.break(sm) {
+      flex-direction: column;
+      gap: 0;
+    }
   }
 }

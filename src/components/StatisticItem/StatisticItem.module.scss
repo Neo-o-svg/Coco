@@ -1,19 +1,36 @@
+@use "../../styles/mixins" as mix;
+
 .item {
   display: flex;
   flex-direction: column;
   align-items: start;
-  width: 199px;
+  width: 19.9rem;
+
+  @include mix.break(xs) {
+    width: 16rem;
+  }
 
   & .title {
     font-weight: 700;
-    font-size: 64px;
+    font-size: 6.4rem;
     line-height: 120%;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
+
+    @include mix.break(xs) {
+      font-size: 3.2rem;
+      line-height: 4.2rem;
+      margin-bottom: 0.8rem;
+    }
   }
 
   & .text {
-    font-size: 18px;
-    line-height: 32px;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
     color: var(--text);
+
+    @include mix.break(xs) {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+    }
   }
 }

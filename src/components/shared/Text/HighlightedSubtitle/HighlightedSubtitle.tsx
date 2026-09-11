@@ -2,16 +2,12 @@ import styles from "./HighlightedSubtitle.module.scss";
 
 interface HighlightedSubtitleProps {
   text: string;
-  style?: React.CSSProperties;
+  className?: string;
 }
 
 export default function HighlightedSubtitle({
   text,
-  style,
+  className = "",
 }: HighlightedSubtitleProps) {
-  return (
-    <p className={styles.text} style={style}>
-      {text}
-    </p>
-  );
+  return <p className={`${styles.text} ${className}`}>{text}</p>;
 }

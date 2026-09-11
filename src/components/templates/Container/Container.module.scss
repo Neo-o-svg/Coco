@@ -1,6 +1,12 @@
+@use "../../../styles/mixins" as mix;
+
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 120rem;
   margin: 0 auto;
-  padding-inline: 10px;
+  padding-inline: 2rem;
+
+  @include mix.break(xs) {
+    overflow-x: hidden;
+  }
 }

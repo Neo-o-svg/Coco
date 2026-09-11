@@ -217,7 +217,7 @@ export const footerListData: FooterListItem[] = [
 ];
 
 export const heroHeaderData: HeaderData = {
-  title: "Digitally forward creative",
+  title: `Digitally forward creative`,
   subtitle: `When it comes to interactive marketing, we've got you covered. Be where the world is going`,
 };
 

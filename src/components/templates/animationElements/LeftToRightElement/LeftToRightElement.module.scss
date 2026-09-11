@@ -11,7 +11,7 @@
 @keyframes LeftToRight {
   from {
     opacity: 0;
-    transform: translateX(calc(-1 * var(--distance, 20px)));
+    transform: translateX(calc(-1 * var(--distance, 2rem)));
   }
   to {
     opacity: 1;

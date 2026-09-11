@@ -4,24 +4,15 @@ import styles from "./BackgroundDecor.module.scss";
 
 export default function BackgroundDecor({
   src,
-  width,
-  height,
-  top,
-  left,
-  right,
-  bottom,
+  style,
+  className,
 }: BackgroundDecorProps) {
   return (
     <div
-      className={styles.decor}
+      className={`${styles.decor} ${className ?? ""}`}
       style={{
-        top,
-        left,
-        right,
-        bottom,
-        width,
-        height,
         backgroundImage: `url(${src})`,
+        ...style,
       }}
     />
   );

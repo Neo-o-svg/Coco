@@ -1,19 +1,42 @@
+@use "../../../../styles/mixins" as mix;
+
 .text {
   font-weight: 600;
-  font-size: 32px;
-  line-height: 42px;
-  width: 600px;
-  padding-left: 100px;
-  margin-bottom: 50px;
+  font-size: 3.2rem;
+  line-height: 4.2rem;
+  width: 60rem;
+  padding-left: 7rem;
+  margin-bottom: 5rem;
   position: relative;
+
+  @include mix.break(sm) {
+    font-size: 2.3rem;
+    line-height: 3.5rem;
+    width: 45rem;
+  }
+
+  @include mix.break(xs) {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    width: 30rem;
+    padding-left: 3.4rem;
+    margin-bottom: 4rem;
+  }
 
   &::before {
     content: "";
     position: absolute;
     background-image: url("../../../../assets/icons/Line.svg");
-    width: 76px;
-    height: 2px;
-    left: 0;
+    width: 7.6rem;
+    height: 0.2rem;
+    left: -1rem;
     top: 15%;
+
+    @include mix.break(sm) {
+      width: 5rem;
+    }
+    @include mix.break(xs) {
+      width: 2.4rem;
+    }
   }
 }

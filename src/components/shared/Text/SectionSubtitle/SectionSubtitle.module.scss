@@ -1,5 +1,12 @@
+@use "../../../../styles/mixins" as mix;
+
 .text {
-  font-size: 18px;
-  line-height: 32px;
+  font-size: 1.8rem;
+  line-height: 3.2rem;
   color: var(--text);
+
+  @include mix.break(xxs) {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
 }

@@ -4,6 +4,18 @@
   & .sectionHeader {
     @include mix.flex-align-center();
     justify-content: space-between;
-    margin-bottom: 50px;
+    margin-bottom: 5rem;
+
+    @include mix.break(sm) {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    & .title {
+      max-width: 53rem;
+    }
+    & .subtitle {
+      max-width: 37rem;
+    }
   }
 }
