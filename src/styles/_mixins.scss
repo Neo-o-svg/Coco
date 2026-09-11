@@ -19,11 +19,11 @@
 }
 
 $breakpoints: (
-  xxs: 38rem,
-  xs: 76.8rem,
-  sm: 99.1rem,
-  md: 120rem,
-  lg: 140rem,
+  xxs: 380px,
+  xs: 768px,
+  sm: 991px,
+  md: 1200px,
+  lg: 1400px,
 );
 
 @mixin break($breakpoint) {
