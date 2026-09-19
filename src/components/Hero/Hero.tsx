@@ -28,7 +28,7 @@ export default function Hero() {
   return (
     <div ref={ref} className="fullHeightWrapper">
       <Container>
-        <div className={styles.hero}>
+        <div className={styles.hero} data-in-view={isInView}>
           <div className={styles.heroContent}>
             <BackgroundDecor
               src={PinkEllipse}
@@ -42,7 +42,7 @@ export default function Hero() {
               }
               className={styles.mobileDecor}
             />
-            <LeftToRightElement isInView={isInView} delay="1.5">
+            <LeftToRightElement delay="1.5">
               <h1 className={styles.heroTitle}>{heroHeaderData.title}</h1>
               <HighlightedSubtitle
                 text={heroHeaderData.subtitle}
@@ -53,7 +53,7 @@ export default function Hero() {
                 className={styles.hSubtitleMobile}
               />
             </LeftToRightElement>
-            <LeftToRightElement isInView={isInView} delay="2">
+            <LeftToRightElement delay="2">
               <form className={styles.tryForFreeCapture}>
                 <input
                   type="email"
@@ -70,7 +70,7 @@ export default function Hero() {
               </form>
             </LeftToRightElement>
           </div>
-          <RightToLeftElement isInView={isInView} delay="1.75">
+          <RightToLeftElement delay="1.75">
             <div className={styles.heroImages}>
               <img
                 className={styles.customer}

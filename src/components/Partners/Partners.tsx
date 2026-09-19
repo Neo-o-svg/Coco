@@ -13,10 +13,9 @@ interface CompanyItemProps {
   icon: string;
   name: string;
   index: number;
-  isInView: boolean;
 }
 
-function CompanyItem({ icon, name, index, isInView }: CompanyItemProps) {
+function CompanyItem({ icon, name, index }: CompanyItemProps) {
   const baseDelay = 1;
   const step = 0.4;
 
@@ -25,7 +24,7 @@ function CompanyItem({ icon, name, index, isInView }: CompanyItemProps) {
   const AnimationWrapper = index < 4 ? LeftToRightElement : RightToLeftElement;
 
   return (
-    <AnimationWrapper delay={delay} distance="200" isInView={isInView}>
+    <AnimationWrapper delay={delay} distance="200">
       <li className={styles.companiesItem}>
         <img src={icon} alt={name} width="160" height="90" />
       </li>
@@ -36,29 +35,19 @@ function CompanyItem({ icon, name, index, isInView }: CompanyItemProps) {
 export default function Partners() {
   return (
     <Section className={styles.partners}>
-      {(isInView) => (
-        <>
-          <div className={styles.companiesCount}>
-            <LeftToRightElement isInView={isInView}>
-              <SectionTitle title={partnersHeaderData.title} />
-            </LeftToRightElement>
-            <RightToLeftElement isInView={isInView} delay="4.7">
-              <SectionSubtitle text={partnersHeaderData.subtitle} />
-            </RightToLeftElement>
-          </div>
-          <ul className={styles.companiesList}>
-            {companyLogos.map(({ id, name, icon }, index) => (
-              <CompanyItem
-                key={id}
-                icon={icon}
-                name={name}
-                index={index}
-                isInView={isInView}
-              />
-            ))}
-          </ul>
-        </>
-      )}
+      <div className={styles.companiesCount}>
+        <LeftToRightElement>
+          <SectionTitle title={partnersHeaderData.title} />
+        </LeftToRightElement>
+        <RightToLeftElement delay="4.7">
+          <SectionSubtitle text={partnersHeaderData.subtitle} />
+        </RightToLeftElement>
+      </div>
+      <ul className={styles.companiesList}>
+        {companyLogos.map(({ id, name, icon }, index) => (
+          <CompanyItem key={id} icon={icon} name={name} index={index} />
+        ))}
+      </ul>
     </Section>
   );
 }

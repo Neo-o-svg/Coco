@@ -14,27 +14,23 @@ import styles from "./CustomerSay.module.scss";
 export default function CustomerSay() {
   return (
     <Section className={styles.customerSay}>
-      {(isInView) => (
-        <>
-          <div className={styles.sectionHeader}>
-            <RightToLeftElement isInView={isInView}>
-              <SectionTitle
-                title={customerSayHeaderData.title}
-                className={styles.title}
-              />
-            </RightToLeftElement>
-            <LeftToRightElement isInView={isInView} delay="1">
-              <SectionSubtitle
-                text={customerSayHeaderData.subtitle}
-                className={styles.subtitle}
-              />
-            </LeftToRightElement>
-          </div>
-          <FadeInUpElement isInView={isInView}>
-            <OneBlockSlider />
-          </FadeInUpElement>
-        </>
-      )}
+      <div className={styles.sectionHeader}>
+        <RightToLeftElement>
+          <SectionTitle
+            title={customerSayHeaderData.title}
+            className={styles.title}
+          />
+        </RightToLeftElement>
+        <LeftToRightElement delay="1">
+          <SectionSubtitle
+            text={customerSayHeaderData.subtitle}
+            className={styles.subtitle}
+          />
+        </LeftToRightElement>
+      </div>
+      <FadeInUpElement>
+        <OneBlockSlider />
+      </FadeInUpElement>
     </Section>
   );
 }
