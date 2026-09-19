@@ -15,19 +15,19 @@ export default function Header() {
   const { ref, isInView } = useInView();
 
   return (
-    <header ref={ref} className={styles.header}>
+    <header ref={ref} className={styles.header} data-in-view={isInView}>
       <Container>
         <div className={styles.headerInner}>
-          <FadeInUpElement distance="40" isInView={isInView}>
+          <FadeInUpElement distance="40">
             <Logo />
           </FadeInUpElement>
 
-          <LeftToRightElement distance="60" isInView={isInView}>
+          <LeftToRightElement distance="60">
             <div className={styles.actions}>
               <HeaderActions />
             </div>
           </LeftToRightElement>
-          <HamburgerComponent isInView={isInView} />
+          <HamburgerComponent />
         </div>
       </Container>
     </header>

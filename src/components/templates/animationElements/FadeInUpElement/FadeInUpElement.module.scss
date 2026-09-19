@@ -3,7 +3,7 @@
 .animatedElement {
   opacity: 0;
 
-  &.animate {
+  [data-in-view="true"] & {
     @include animated-element(fadeInUp);
   }
 }

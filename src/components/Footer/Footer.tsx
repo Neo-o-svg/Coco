@@ -27,7 +27,7 @@ export default function Footer() {
 
   return (
     <Container>
-      <footer ref={ref} className={styles.footer}>
+      <footer ref={ref} className={styles.footer} data-in-view={isInView}>
         <BackgroundDecor
           src={PinkEllipse}
           style={
@@ -54,7 +54,7 @@ export default function Footer() {
 
         <div className={styles.footerTop}>
           <div>
-            <RightToLeftElement isInView={isInView}>
+            <RightToLeftElement>
               <SectionTitle title={thinkBeyondHeaderData.title} />
               <HighlightedSubtitle
                 text={thinkBeyondHeaderData.subtitle}
@@ -62,14 +62,14 @@ export default function Footer() {
               />
             </RightToLeftElement>
           </div>
-          <LeftToRightElement isInView={isInView} delay="1">
+          <LeftToRightElement delay="1">
             <TryItForFreeButton />
           </LeftToRightElement>
         </div>
 
         <div className={styles.footerBottom}>
           <div className={styles.footerLeft}>
-            <LeftToRightElement isInView={isInView}>
+            <LeftToRightElement>
               <Logo />
               <p className={styles.text}>
                 We built an elegant solution. Our team created a fully
@@ -77,7 +77,7 @@ export default function Footer() {
               </p>
             </LeftToRightElement>
           </div>
-          <RightToLeftElement isInView={isInView} delay="1">
+          <RightToLeftElement delay="1">
             <div className={styles.footerRight}>
               {footerListData.map((list, ind) => (
                 <FooterList key={ind} type={list.type} items={list.items} />
@@ -85,7 +85,7 @@ export default function Footer() {
             </div>
           </RightToLeftElement>
         </div>
-        <FadeInUpElement isInView={isInView} delay="1.5">
+        <FadeInUpElement delay="1.5">
           <div className={styles.copyright}>
             <p className={styles.copyrightText}>
               © Copyright 2023 All Rights Reserved

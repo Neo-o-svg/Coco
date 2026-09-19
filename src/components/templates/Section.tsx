@@ -5,7 +5,7 @@ import Container from "./Container/Container";
 interface SectionProps {
   darkBg?: boolean;
   className?: string;
-  children: (isInView: boolean) => React.ReactNode;
+  children: React.ReactNode;
 }
 
 export default function Section({
@@ -17,8 +17,8 @@ export default function Section({
 
   const content = (
     <Container>
-      <div ref={ref} className={`section ${className}`}>
-        {children(isInView)}
+      <div ref={ref} data-in-view={isInView} className={`section ${className}`}>
+        {children}
       </div>
     </Container>
   );

@@ -20,45 +20,34 @@ export default function LiftYourBusiness() {
 
   return (
     <Section className={styles.liftYourBusiness}>
-      {(isInView) => (
-        <>
-          <ul className={styles.statisticList}>
-            {statisticItems.map((item, index) => (
-              <RightToLeftElement
-                isInView={isInView}
-                delay={(base_delay + index * step).toString()}
-              >
-                <StatisticItem
-                  key={item.id}
-                  title={item.title}
-                  text={item.text}
-                />
-              </RightToLeftElement>
-            ))}
-          </ul>
+      <ul className={styles.statisticList}>
+        {statisticItems.map((item, index) => (
+          <RightToLeftElement delay={(base_delay + index * step).toString()}>
+            <StatisticItem key={item.id} title={item.title} text={item.text} />
+          </RightToLeftElement>
+        ))}
+      </ul>
 
-          <FadeInDownElement isInView={isInView}>
-            <div className={styles.imageWrapper}>
-              <img
-                src={businessImage}
-                alt="Networking image"
-                width="1200"
-                height="536"
-                loading="lazy"
-              />
-            </div>
-          </FadeInDownElement>
+      <FadeInDownElement>
+        <div className={styles.imageWrapper}>
+          <img
+            src={businessImage}
+            alt="Networking image"
+            width="1200"
+            height="536"
+            loading="lazy"
+          />
+        </div>
+      </FadeInDownElement>
 
-          <div className={styles.callToActionContent}>
-            <FadeInUpElement isInView={isInView} delay="1.5" distance="50">
-              <SectionTitle title={liftBusinessHeaderData.title} />
-            </FadeInUpElement>
-            <FadeInUpElement isInView={isInView} delay="2" distance="50">
-              <SectionSubtitle text={liftBusinessHeaderData.subtitle} />
-            </FadeInUpElement>
-          </div>
-        </>
-      )}
+      <div className={styles.callToActionContent}>
+        <FadeInUpElement delay="1.5" distance="50">
+          <SectionTitle title={liftBusinessHeaderData.title} />
+        </FadeInUpElement>
+        <FadeInUpElement delay="2" distance="50">
+          <SectionSubtitle text={liftBusinessHeaderData.subtitle} />
+        </FadeInUpElement>
+      </div>
     </Section>
   );
 }

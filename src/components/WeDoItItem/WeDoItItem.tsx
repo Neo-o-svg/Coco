@@ -8,7 +8,6 @@ interface WeDoItItemProps {
   title: string;
   text: string;
   index: number;
-  isInView: boolean;
 }
 
 export default function WeDoItItem({
@@ -16,7 +15,6 @@ export default function WeDoItItem({
   title,
   text,
   index,
-  isInView,
 }: WeDoItItemProps) {
   const baseDelay = 1;
   const step = 0.4;
@@ -27,7 +25,7 @@ export default function WeDoItItem({
     index % 2 != 0 ? LeftToRightElement : RightToLeftElement;
 
   return (
-    <AnimationWrapper delay={delay} isInView={isInView}>
+    <AnimationWrapper delay={delay}>
       <li className={styles.item}>
         <div className={styles.imageWrapper}>
           <img src={image} alt={title} width="240" height="273" />

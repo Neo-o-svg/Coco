@@ -12,23 +12,19 @@ import styles from "./CocaHelp.module.scss";
 export default function CocaHelp() {
   return (
     <Section darkBg>
-      {(isInView) => (
-        <>
-          <LeftToRightElement isInView={isInView} delay="0.2">
-            <SectionTitle
-              title={cocaHelpHeaderData.title}
-              className={`${styles.sectionTitle} whiteText`}
-            />
-          </LeftToRightElement>
-          <LeftToRightElement isInView={isInView}>
-            <SectionSubtitle
-              text={cocaHelpHeaderData.subtitle}
-              className={styles.subTitle}
-            />
-          </LeftToRightElement>
-          <HelpCards isInView={isInView} />
-        </>
-      )}
+      <LeftToRightElement delay="0.2">
+        <SectionTitle
+          title={cocaHelpHeaderData.title}
+          className={`${styles.sectionTitle} whiteText`}
+        />
+      </LeftToRightElement>
+      <LeftToRightElement>
+        <SectionSubtitle
+          text={cocaHelpHeaderData.subtitle}
+          className={styles.subTitle}
+        />
+      </LeftToRightElement>
+      <HelpCards />
     </Section>
   );
 }

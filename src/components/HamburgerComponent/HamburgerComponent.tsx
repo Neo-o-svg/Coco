@@ -9,18 +9,12 @@ import LeftToRightElement from "../templates/animationElements/LeftToRightElemen
 
 import styles from "./HamburgerComponent.module.scss";
 
-interface HamburgerComponentProps {
-  isInView: boolean;
-}
-
-export default function HamburgerComponent({
-  isInView,
-}: HamburgerComponentProps) {
+export default function HamburgerComponent() {
   const [open, setOpen] = useState(false);
 
   return (
     <div className={styles.hamburgerButton}>
-      <LeftToRightElement distance="60" isInView={isInView}>
+      <LeftToRightElement distance="60">
         <Hamburger toggled={open} toggle={setOpen} />
       </LeftToRightElement>
       {open && (
@@ -29,7 +23,7 @@ export default function HamburgerComponent({
             <Logo />
             <Hamburger toggled={open} toggle={setOpen} />
           </header>
-          <FadeInUpElement isInView={true}>
+          <FadeInUpElement>
             <main className={styles.burgerMenuMain}>
               <HeaderActions />
             </main>

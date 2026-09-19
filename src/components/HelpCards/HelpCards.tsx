@@ -12,10 +12,9 @@ interface HelpCardProps {
   title: string;
   text: string;
   index: number;
-  isInView: boolean;
 }
 
-function HelpCard({ image, title, text, index, isInView }: HelpCardProps) {
+function HelpCard({ image, title, text, index }: HelpCardProps) {
   const baseDelay = 1.5;
   const step = 0.2;
 
@@ -25,7 +24,7 @@ function HelpCard({ image, title, text, index, isInView }: HelpCardProps) {
     index % 2 === 0 ? LeftToRightElement : RightToLeftElement;
 
   return (
-    <AnimationWrapper delay={delay} isInView={isInView}>
+    <AnimationWrapper delay={delay}>
       <li className={styles.card}>
         <img
           className={styles.icon}
@@ -42,11 +41,7 @@ function HelpCard({ image, title, text, index, isInView }: HelpCardProps) {
   );
 }
 
-interface MainProps {
-  isInView: boolean;
-}
-
-export default function HelpCards({ isInView }: MainProps) {
+export default function HelpCards() {
   return (
     <ul className={styles.cardsList}>
       {cards.map((card: CardItem, index: number) => (
@@ -56,7 +51,6 @@ export default function HelpCards({ isInView }: MainProps) {
           title={card.title}
           text={card.text}
           index={index}
-          isInView={isInView}
         />
       ))}
     </ul>

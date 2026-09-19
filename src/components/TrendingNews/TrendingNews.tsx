@@ -13,19 +13,15 @@ import styles from "./TrendingNews.module.scss";
 export default function TrendingNews() {
   return (
     <Section>
-      {(isInView) => (
-        <>
-          <FadeInDownElement isInView={isInView}>
-            <div className={styles.sectionHeader}>
-              <SectionTitle title={trendingNewsHeaderData.title} />
-              <SectionSubtitle text={trendingNewsHeaderData.subtitle} />
-            </div>
-          </FadeInDownElement>
-          <FadeInDownElement isInView={isInView} delay="1">
-            <TwoBlockSlider />
-          </FadeInDownElement>
-        </>
-      )}
+      <FadeInDownElement>
+        <div className={styles.sectionHeader}>
+          <SectionTitle title={trendingNewsHeaderData.title} />
+          <SectionSubtitle text={trendingNewsHeaderData.subtitle} />
+        </div>
+      </FadeInDownElement>
+      <FadeInDownElement delay="1">
+        <TwoBlockSlider />
+      </FadeInDownElement>
     </Section>
   );
 }
